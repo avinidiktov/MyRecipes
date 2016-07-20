@@ -1,11 +1,23 @@
-﻿using System;
-namespace MyRecipes.Core
+﻿using System.Collections.Generic;
+using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
+
+
+namespace MyRecipes.Core.Model
 {
-	public class Category
+    [Table("Categoty")]
+    public class Category : ITitleDomainObject
 	{
-		public Category()
-		{
-		}
+        [PrimaryKey,AutoIncrement]
+        public int Id { get; set; }
+
+        public string Title { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<Dish> Dishes { get; set; }
+
+
+	    
 	}
 }
 

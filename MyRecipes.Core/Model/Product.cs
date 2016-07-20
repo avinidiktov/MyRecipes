@@ -1,15 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace MyRecipes.Core.Model
 {
-    public class Product
+    [Table("Product")]
+    public class Product :ITitleDomainObject
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
         public string Title { get; set; }
 
         public float Weight { get; set; }
+
+        [ManyToMany(typeof(DishProduct))]
+        public List<Dish> Dishes { get; set; }
+
     }
 }
