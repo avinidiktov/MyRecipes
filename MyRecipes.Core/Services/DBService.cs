@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,11 @@ using SQLite.Net;
 
 namespace MyRecipes.Core.Services
 {
-    public class DBService : IDBService
+    public class DbService : IDbService
     {
         private readonly SQLiteConnection _connection;
 
-        public DBService(IMvxSqliteConnectionFactory factory)
+        public DbService(IMvxSqliteConnectionFactory factory)
         {
 
             //CREATE DB
@@ -27,9 +28,19 @@ namespace MyRecipes.Core.Services
         //
 
 
+        public T LoadItem <T>(int id) where T : class
+        {
+            return _connection.Table<T>().LastOrDefault();
+        }
 
+        public void InsertItem<T>(T item) where T : class
+        {
+            _connection.Insert(item);
+        }
 
-
-
+        public IEnumerable LoadItems<T>() where T : class
+        {
+            return _connection.Table<T>();
+        }
     }
 }

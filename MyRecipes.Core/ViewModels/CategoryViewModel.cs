@@ -8,10 +8,10 @@ namespace MyRecipes.Core
 {
 	public class CategoryViewModel : MvxViewModel
 	{
-        private readonly IDBService _dBService;
+        private readonly IDbService _dBService;
 
 
-        public CategoryViewModel(IDBService dBService)
+        public CategoryViewModel(IDbService dBService)
 		{
             _dBService = dBService;
 
