@@ -41,6 +41,8 @@
     <Compile Include="Model\ITitleDomainObject.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\DBService.cs" />
+    <Compile Include="Services\IDBService.cs" />
     <Compile Include="ViewModels\DishViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />

@@ -1,14 +1,23 @@
 ﻿using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.Model;
+using MyRecipes.Core.Services;
 
 
 namespace MyRecipes.Core
 {
 	public class CategoryViewModel : MvxViewModel
 	{
-		public CategoryViewModel()
+        private readonly IDBService _dBService;
+
+
+        public CategoryViewModel(IDBService dBService)
 		{
+            _dBService = dBService;
+
+
+
+            /*
 			Categories = new List<Category>() {
 				new Category{
 				Title = "Супы",
@@ -96,7 +105,8 @@ namespace MyRecipes.Core
 		            }
 		        }
 		    }
-		}
+            */
+        }
 
 		public List<Category> _categories;
 
