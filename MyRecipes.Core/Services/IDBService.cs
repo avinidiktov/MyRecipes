@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MyRecipes.Core.Services
 {
@@ -9,6 +8,6 @@ namespace MyRecipes.Core.Services
 
         void InsertItem<T>(T item) where T : class;
 
-        IEnumerable LoadItems<T>() where T : class;
+        ICollection<T> LoadItems<T>() where T : class;
     }
 }

@@ -11,9 +11,9 @@ namespace MyRecipes.Core.ViewModels
 
         }
 
-        private List<Dish> _dishes; 
+        private ICollection<Dish> _dishes; 
              
-        public List<Dish> Dishes {
+        public ICollection<Dish> Dishes {
             get { return _dishes; }
             set { _dishes = value; RaisePropertyChanged(()=>Dishes); }
         }

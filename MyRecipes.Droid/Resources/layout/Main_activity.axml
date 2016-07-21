@@ -7,8 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Избранное"
-         />
+        android:text="Избранное" />
     <Mvx.MvxListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,8 +16,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Категории"
-         />
+        android:text="Категории"/>
     <Mvx.MvxListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

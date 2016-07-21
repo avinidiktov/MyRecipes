@@ -5,14 +5,13 @@ using SQLiteNetExtensions.Attributes;
 
 namespace MyRecipes.Core.Model
 {
-    [Table("Category")]
+    [Table("Dish")]
     public  class Dish : ITitleDomainObject
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
         public string Title { get; set; }
-
 
         [ForeignKey(typeof(Category))]
         public int CategoryId { get; set; }
@@ -26,8 +25,6 @@ namespace MyRecipes.Core.Model
 
         [ManyToMany(typeof(DishProduct))]
         public List<Product> Products { get; set; }
-
-        
 
     }
 }

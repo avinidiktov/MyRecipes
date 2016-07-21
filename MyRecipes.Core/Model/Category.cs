@@ -15,8 +15,6 @@ namespace MyRecipes.Core.Model
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Dish> Dishes { get; set; }
-
-
 	    
 	}
 }

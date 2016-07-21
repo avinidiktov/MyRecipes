@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MvvmCross.Plugins.Sqlite;
 using MyRecipes.Core.Model;
 using SQLite.Net;
@@ -23,14 +19,36 @@ namespace MyRecipes.Core.Services
             _connection.CreateTable<Dish>();
             _connection.CreateTable<DishProduct>();
             _connection.CreateTable<Product>();
+
+
+
+            CreateCategoty();
+
+
+
+            //Clear db
+            /*
+            _connection.DropTable<Category>();
+            _connection.DropTable<Dish>();
+            _connection.DropTable<DishProduct>();
+            _connection.DropTable<Product>();
+           
+            _connection.Execute("delete from Category");
+            _connection.Execute("delete from Dish");
+            _connection.Execute("delete from DishProduct");
+            _connection.Execute("delete from Product");
+            */
+
+
+
+
+
+
         }
-
-        //
-
 
         public T LoadItem <T>(int id) where T : class
         {
-            return _connection.Table<T>().LastOrDefault();
+            return _connection.Get<T>(id);
         }
 
         public void InsertItem<T>(T item) where T : class
@@ -38,9 +56,47 @@ namespace MyRecipes.Core.Services
             _connection.Insert(item);
         }
 
-        public IEnumerable LoadItems<T>() where T : class
+        public ICollection<T> LoadItems<T>() where T : class
         {
-            return _connection.Table<T>();
+            return _connection.Table<T>().ToList();
         }
+
+
+        public void CreateCategoty()
+        {
+            if (LoadItems<Category>().Count == 0)
+            {
+                InsertItem(new Category()
+                {
+                    Title = "Супы",
+                    Dishes = new List<Dish>()
+                });
+
+                InsertItem(new Category()
+                {
+                    Title = "Салаты",
+                    Dishes = new List<Dish>()
+                });
+
+                InsertItem(new Category()
+                {
+                    Title = "Напитки",
+                    Dishes = new List<Dish>()
+                });
+                InsertItem(new Category()
+                {
+                    Title = "Гарниры",
+                    Dishes = new List<Dish>()
+                });
+                InsertItem(new Category()
+                {
+                    Title = "Десерты",
+                    Dishes = new List<Dish>()
+                });
+            }
+        }
+
+
+
     }
 }
