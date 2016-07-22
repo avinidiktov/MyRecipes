@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Введите название блюда:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        android:id="@+id/editText1"
+        local:MvxBind="Text TitleNewDish" />
+    <TextView
+        android:text="Введите описание процесса приготовления:"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText1"
+        android:id="@+id/textView2" />
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:id="@+id/editText2"
+        local:MvxBind="Text DescriptionNewDish" />
+    <CheckBox
+        android:text="Добавить в избранное?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText2"
+        android:id="@+id/checkBox1"
+        local:MvxBind="Checked  IsFavorite" />
+    <LinearLayout
+        android:id="@+id/BottonBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#222222"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dip">
+        <Button
+            android:id="@+id/AddNewCategoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавить блюдо"
+            local:MvxBind="Click AddNewDishCommand" />
+    </LinearLayout>
+</RelativeLayout>

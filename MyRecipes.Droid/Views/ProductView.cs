@@ -3,12 +3,12 @@ using MvvmCross.Droid.Views;
 
 namespace MyRecipes.Droid.Views
 {
-    [Activity(Label = "Мои блюда", MainLauncher = false)]
-    public class DishView:MvxActivity
+    [Activity(Label = "Мои продукты", MainLauncher = false)]
+    public class ProductView : MvxActivity
     {
         protected override void OnViewModelSet()
         {
-            SetContentView(Resource.Layout.Dishes_Layout);
+            //SetContentView(Resource.Layout.);
         }
     }
 }

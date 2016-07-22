@@ -21,10 +21,9 @@ namespace MyRecipes.Core.Model
 
         public string CookingProcess { get; set; }
 
-		public bool IsFavorites { get; set; }
+		public bool IsFavorite { get; set; }
 
         [ManyToMany(typeof(DishProduct))]
         public List<Product> Products { get; set; }
-
     }
 }

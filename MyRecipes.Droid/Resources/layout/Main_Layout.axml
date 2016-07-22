@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <Button
+        android:id="@+id/ShowAllProductButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Имеющиеся продукты"
+        local:MvxBind="Click ShowAllProductCommand" />
+    <TextView
+        android:id="@+id/TitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Избранные блюда:"
+        android:gravity="center"
+        android:layout_below="@+id/ShowAllProductButton" />
+    <TextView
+        android:id="@+id/FMTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="24dp"
+        local:MvxBind="Text FavoritesMessage"
+        android:layout_below="@+id/TitleTextView" />
+    <LinearLayout
+        android:id="@+id/FavoritesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FMTextView">
+        <Mvx.MvxListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            local:MvxBind="ItemsSource Favorites"
+            local:MvxItemTemplate="@layout/favoritesitem" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/TitleCategoriesTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Категории блюд:"
+        android:gravity="center"
+        android:layout_below="@+id/FavoritesLayout" />
+    <TextView
+        android:id="@+id/CMTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        local:MvxBind="Text CategoriesMessage"
+        android:layout_below="@+id/TitleCategoriesTextView" />
+    <LinearLayout
+        android:id="@+id/CategoiesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CMTextView"
+        android:layout_above="@+id/BottonBar">
+        <Mvx.MvxListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            local:MvxBind="ItemsSource Categories; SelectedItem SelectedCategory; ItemClick CategoryClickedCommand"
+            local:MvxItemTemplate="@layout/categoriesitem" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/BottonBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#222222"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dip">
+        <Button
+            android:id="@+id/AddNewCategoryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Добавить категорию"
+            local:MvxBind="Click AddCategoryCommand" />
+    </LinearLayout>
+</RelativeLayout>

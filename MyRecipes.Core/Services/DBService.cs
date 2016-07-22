@@ -22,7 +22,7 @@ namespace MyRecipes.Core.Services
 
 
 
-            CreateCategoty();
+            CreateCategory();
 
 
 
@@ -62,7 +62,7 @@ namespace MyRecipes.Core.Services
         }
 
 
-        public void CreateCategoty()
+        public void CreateCategory()
         {
             if (LoadItems<Category>().Count == 0)
             {

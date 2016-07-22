@@ -8,7 +8,7 @@ namespace MyRecipes.Droid.Views
     {
         protected override void OnViewModelSet()
         {
-            SetContentView(Resource.Layout.Main_activity);
+            SetContentView(Resource.Layout.Main_Layout);
         }
     }
 }

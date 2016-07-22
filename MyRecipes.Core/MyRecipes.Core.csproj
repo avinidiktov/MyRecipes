@@ -40,9 +40,15 @@
     <Compile Include="Model\IDomainObject.cs" />
     <Compile Include="Model\ITitleDomainObject.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="MvvmCrossExtension\Command\MvxRelayCommand.cs" />
+    <Compile Include="MvvmCrossExtension\ViewModels\ParameterizedViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DbService.cs" />
     <Compile Include="Services\IDbService.cs" />
+    <Compile Include="ViewModels\AddCategoryViewModel.cs" />
+    <Compile Include="ViewModels\AddDishViewModel.cs" />
+    <Compile Include="ViewModels\AddNewProductViewModel.cs" />
+    <Compile Include="ViewModels\AllProductViewModel.cs" />
     <Compile Include="ViewModels\DishViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
