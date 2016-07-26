@@ -17,7 +17,7 @@ namespace MyRecipes.Core.ViewModels
             _dBService = dBService;
             
             Categories = new List<Category>();
-            Categories = _dBService.LoadItems<Category>();
+            Categories = _dBService.LoadItems<Category>().ToList();
 
 
             Favorites = new List<Dish>();
@@ -43,15 +43,15 @@ namespace MyRecipes.Core.ViewModels
         }
 
 
-		public ICollection<Category> _categories;
-		public ICollection<Category> Categories {
+		public List<Category> _categories;
+		public List<Category> Categories {
 			get { return _categories; }
 			set { _categories = value; RaisePropertyChanged(()=>Categories);}
 		}
 
 
-	    public ICollection<Dish> _favorites;
-	    public ICollection<Dish> Favorites
+	    public List<Dish> _favorites;
+	    public List<Dish> Favorites
 	    {
 	        get { return _favorites; }
 	        set { _favorites = value; RaisePropertyChanged(()=>Favorites); }
@@ -83,7 +83,7 @@ namespace MyRecipes.Core.ViewModels
         {
             get
             {
-                return new MvxRelayCommand(() => ShowViewModel<DishViewModel>(new DishViewModel.Parameters() {Key = SelectedCategory.Id.ToString()}));
+                return new MvxRelayCommand(() => ShowViewModel<DishViewModel>(new Parameters() {Key = SelectedCategory.Id.ToString()}));
             }
         }
 

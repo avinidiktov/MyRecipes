@@ -1,5 +1,4 @@
 ﻿using System.Windows.Input;
-using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.Model;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
@@ -42,23 +41,14 @@ namespace MyRecipes.Core.ViewModels
         }
 
 
-        public ICommand AddNewCategoryCommand
-        {
-            get
-            {
-                return new MvxRelayCommand(AddNewCategory);
-            }
-        }
+        public ICommand AddNewCategoryCommand => new MvxRelayCommand(AddNewCategory);
 
         private void AddNewCategory()
         {
-            if (!string.IsNullOrEmpty(TitleNewCategory))
-            {
-                //NewCategory = new Category();
-                NewCategory.Title = TitleNewCategory;
-                _dbService.InsertItem<Category>(NewCategory);
-                ShowViewModel<CategoryViewModel>();
-            }
+            if (string.IsNullOrEmpty(TitleNewCategory)) return;
+            NewCategory.Title = TitleNewCategory;
+            _dbService.InsertItem(NewCategory);
+            ShowViewModel<CategoryViewModel>();
         }
     }
 }

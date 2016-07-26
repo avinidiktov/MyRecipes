@@ -16,7 +16,6 @@ namespace MyRecipes.Core.ViewModels
         {
             _dBService = dBService;
 
-            Dishes = new List<Dish>();
 
             CategoryName = "";
             DishesMessage = "";
@@ -30,9 +29,9 @@ namespace MyRecipes.Core.ViewModels
             set { _categoryName = value; RaisePropertyChanged(()=>CategoryName); }
         }
 
-        private ICollection<Dish> _dishes; 
+        private List<Dish> _dishes; 
              
-        public ICollection<Dish> Dishes {
+        public List<Dish> Dishes {
             get { return _dishes; }
             set { _dishes = value; RaisePropertyChanged(()=>Dishes); }
         }
@@ -54,7 +53,15 @@ namespace MyRecipes.Core.ViewModels
         {
             Key = parameters.Key;
             CategoryName = _dBService.LoadItem<Category>(int.Parse(Key)).Title;
+            UpdateCollectionDishes();
             UpdateDishesMessage();
+            
+        }
+
+        private void UpdateCollectionDishes()
+        {
+            var category = _dBService.LoadItemWithChildren<Category>(int.Parse(Key), true);
+            Dishes = category.Dishes ?? new List<Dish>();
         }
 
 
@@ -75,7 +82,7 @@ namespace MyRecipes.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() => ShowViewModel<AddDishViewModel>());
+                return new MvxCommand(() => ShowViewModel<AddDishViewModel>(new Parameters() { Key = this.Key }));
             }
         }
 

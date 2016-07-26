@@ -50,7 +50,6 @@
     <Compile Include="ViewModels\AddNewProductViewModel.cs" />
     <Compile Include="ViewModels\AllProductViewModel.cs" />
     <Compile Include="ViewModels\DishViewModel.cs" />
-    <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="ViewModels\CategoryViewModel.cs" />
     <Compile Include="Model\Category.cs" />
   </ItemGroup>

@@ -15,9 +15,6 @@
             local:MvxBind="ItemsSource Products"
             local:MvxItemTemplate="@layout/productitem" />
     </LinearLayout>
-
-
-
     <LinearLayout
         android:id="@+id/BottonBar"
         android:layout_width="match_parent"

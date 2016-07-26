@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.Model;
-using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
 
@@ -21,7 +17,7 @@ namespace MyRecipes.Core.ViewModels
             _dbService = dbService;
 
             Products = new List<Product>();
-            Products = dbService.LoadItems<Product>();
+            Products = dbService.LoadItems<Product>().ToList();
 
             ProductMessage = "";
 
@@ -34,8 +30,8 @@ namespace MyRecipes.Core.ViewModels
         }
 
 
-        private ICollection<Product> _products;
-        public ICollection<Product> Products {
+        private List<Product> _products;
+        public List<Product> Products {
             get { return _products; }
             set { _products = value; RaisePropertyChanged(() => Products); }
         }
@@ -44,7 +40,7 @@ namespace MyRecipes.Core.ViewModels
         {
             get
             {
-                return new MvxRelayCommand(() => ShowViewModel<AddNewProductViewModel>());
+                return new MvxCommand(() => ShowViewModel<AddNewProductViewModel>());
             }
         }
 

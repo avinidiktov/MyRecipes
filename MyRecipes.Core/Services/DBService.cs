@@ -3,6 +3,7 @@ using System.Linq;
 using MvvmCross.Plugins.Sqlite;
 using MyRecipes.Core.Model;
 using SQLite.Net;
+using SQLiteNetExtensions.Extensions;
 
 namespace MyRecipes.Core.Services
 {
@@ -12,7 +13,7 @@ namespace MyRecipes.Core.Services
 
         public DbService(IMvxSqliteConnectionFactory factory)
         {
-
+            
             //CREATE DB
             _connection = factory.GetConnection("data.dat");
             _connection.CreateTable<Category>();
@@ -23,6 +24,10 @@ namespace MyRecipes.Core.Services
 
 
             CreateCategory();
+            CreateProduct();
+            CreateDish();
+
+            
 
 
 
@@ -39,11 +44,21 @@ namespace MyRecipes.Core.Services
             _connection.Execute("delete from Product");
             */
 
+        }
 
+        private void CreateDish()
+        {
+            
+        }
 
+        public void DbUpdate<T>(T obj) where T :class
+        {
+            _connection.Update(obj);
+        }
 
-
-
+        public void DbUpdateWithChildren<T>(T obj) where T : class
+        {
+            _connection.UpdateWithChildren(obj);
         }
 
         public T LoadItem <T>(int id) where T : class
@@ -59,6 +74,19 @@ namespace MyRecipes.Core.Services
         public ICollection<T> LoadItems<T>() where T : class
         {
             return _connection.Table<T>().ToList();
+        }
+
+
+        /// <summary>
+        /// recursive methods
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="id"></param>
+        /// <param name="recursive"></param>
+        /// <returns></returns>
+        public T LoadItemWithChildren<T>(int id, bool recursive) where T : class
+        {
+            return _connection.GetWithChildren<T>(id,recursive);
         }
 
 
@@ -93,6 +121,39 @@ namespace MyRecipes.Core.Services
                     Title = "Десерты",
                     Dishes = new List<Dish>()
                 });
+            }
+        }
+
+        public void CreateProduct()
+        {
+            if (LoadItems<Product>().Count == 0)
+            {
+                InsertItem(new Product()
+                {
+                    Title = "Картофель",
+                    Weight = (float) 0.500
+                });
+                InsertItem(new Product()
+                {
+                    Title = "Морковь",
+                    Weight = (float)0.300
+                });
+                InsertItem(new Product()
+                {
+                    Title = "Капуста",
+                    Weight = (float)2.500
+                });
+                InsertItem(new Product()
+                {
+                    Title = "Говядина",
+                    Weight = (float)1.500
+                });
+                InsertItem(new Product()
+                {
+                    Title = "Свинина",
+                    Weight = (float)1.500
+                });
+
             }
         }
 

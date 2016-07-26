@@ -11,26 +11,35 @@
         android:layout_height="wrap_content"
         android:text="Имеющиеся продукты"
         local:MvxBind="Click ShowAllProductCommand" />
-    <TextView
-        android:id="@+id/TitleTextView"
-        android:layout_width="match_parent"
+
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Избранные блюда:"
-        android:gravity="center"
-        android:layout_below="@+id/ShowAllProductButton" />
-    <TextView
-        android:id="@+id/FMTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textSize="24dp"
-        local:MvxBind="Text FavoritesMessage"
-        android:layout_below="@+id/TitleTextView" />
+    android:layout_below="@+id/ShowAllProductButton">
     <LinearLayout
         android:id="@+id/FavoritesLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/FMTextView">
+        android:orientation="vertical"
+        android:layout_weight="2">
+      <TextView
+          android:id="@+id/TitleTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Избранные блюда:"
+          android:gravity="center" />
+      <TextView
+          android:id="@+id/FMTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="2dp"
+          android:textSize="15dp"
+          local:MvxBind="Text FavoritesMessage" />
+      <LinearLayout
+          android:id="@+id/Favorites"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
         <Mvx.MvxListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -38,27 +47,31 @@
             android:minHeight="25px"
             local:MvxBind="ItemsSource Favorites"
             local:MvxItemTemplate="@layout/favoritesitem" />
+      </LinearLayout>
     </LinearLayout>
-    <TextView
-        android:id="@+id/TitleCategoriesTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Категории блюд:"
-        android:gravity="center"
-        android:layout_below="@+id/FavoritesLayout" />
-    <TextView
-        android:id="@+id/CMTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24dp"
-        local:MvxBind="Text CategoriesMessage"
-        android:layout_below="@+id/TitleCategoriesTextView" />
     <LinearLayout
-        android:id="@+id/CategoiesLayout"
+        android:id="@+id/CategoriesLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/CMTextView"
-        android:layout_above="@+id/BottonBar">
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_below="@+id/FavoritesLayout">
+      <TextView
+          android:id="@+id/TitleCategoriesTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Категории блюд:"
+          android:gravity="center" />
+      <TextView
+          android:id="@+id/CMTextView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15dp"
+          local:MvxBind="Text CategoriesMessage" />
+      <LinearLayout
+          android:id="@+id/CategoiesLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
         <Mvx.MvxListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +79,15 @@
             android:minHeight="25px"
             local:MvxBind="ItemsSource Categories; SelectedItem SelectedCategory; ItemClick CategoryClickedCommand"
             local:MvxItemTemplate="@layout/categoriesitem" />
+      </LinearLayout>
     </LinearLayout>
+    
+    
+    
+  </LinearLayout>
+  
+  
+    
     <LinearLayout
         android:id="@+id/BottonBar"
         android:layout_width="match_parent"

@@ -47,6 +47,44 @@ namespace MyRecipes.Droid
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MyRecipes.Droid.Resource.Styleable.MvxListView;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MyRecipes.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
 			global::MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MyRecipes.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxBind = global::MyRecipes.Droid.Resource.Attribute.MvxBind;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxDropDownItemTemplate = global::MyRecipes.Droid.Resource.Attribute.MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxGroupItemTemplate = global::MyRecipes.Droid.Resource.Attribute.MvxGroupItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxItemTemplate = global::MyRecipes.Droid.Resource.Attribute.MvxItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxLang = global::MyRecipes.Droid.Resource.Attribute.MvxLang;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxSource = global::MyRecipes.Droid.Resource.Attribute.MvxSource;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxTemplate = global::MyRecipes.Droid.Resource.Attribute.MvxTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.MvxTemplateSelector = global::MyRecipes.Droid.Resource.Attribute.MvxTemplateSelector;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.layoutManager = global::MyRecipes.Droid.Resource.Attribute.layoutManager;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.reverseLayout = global::MyRecipes.Droid.Resource.Attribute.reverseLayout;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.spanCount = global::MyRecipes.Droid.Resource.Attribute.spanCount;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Attribute.stackFromEnd = global::MyRecipes.Droid.Resource.Attribute.stackFromEnd;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame = global::MyRecipes.Droid.Resource.Dimension.item_touch_helper_max_drag_scroll_per_frame;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity = global::MyRecipes.Droid.Resource.Dimension.item_touch_helper_swipe_escape_max_velocity;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Dimension.item_touch_helper_swipe_escape_velocity = global::MyRecipes.Droid.Resource.Dimension.item_touch_helper_swipe_escape_velocity;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.MvvmCrossTagId = global::MyRecipes.Droid.Resource.Id.MvvmCrossTagId;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.MvxBindingTagUnique = global::MyRecipes.Droid.Resource.Id.MvxBindingTagUnique;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Id.item_touch_helper_previous_elevation = global::MyRecipes.Droid.Resource.Id.item_touch_helper_previous_elevation;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxBinding = global::MyRecipes.Droid.Resource.Styleable.MvxBinding;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxBinding_MvxBind = global::MyRecipes.Droid.Resource.Styleable.MvxBinding_MvxBind;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxBinding_MvxLang = global::MyRecipes.Droid.Resource.Styleable.MvxBinding_MvxLang;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxControl = global::MyRecipes.Droid.Resource.Styleable.MvxControl;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxControl_MvxTemplate = global::MyRecipes.Droid.Resource.Styleable.MvxControl_MvxTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxExpandableListView = global::MyRecipes.Droid.Resource.Styleable.MvxExpandableListView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MyRecipes.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxImageView = global::MyRecipes.Droid.Resource.Styleable.MvxImageView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxImageView_MvxSource = global::MyRecipes.Droid.Resource.Styleable.MvxImageView_MvxSource;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxListView = global::MyRecipes.Droid.Resource.Styleable.MvxListView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MyRecipes.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxListView_MvxItemTemplate = global::MyRecipes.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxRecyclerView = global::MyRecipes.Droid.Resource.Styleable.MvxRecyclerView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.MvxRecyclerView_MvxTemplateSelector = global::MyRecipes.Droid.Resource.Styleable.MvxRecyclerView_MvxTemplateSelector;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView = global::MyRecipes.Droid.Resource.Styleable.RecyclerView;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_android_orientation = global::MyRecipes.Droid.Resource.Styleable.RecyclerView_android_orientation;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_layoutManager = global::MyRecipes.Droid.Resource.Styleable.RecyclerView_layoutManager;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_reverseLayout = global::MyRecipes.Droid.Resource.Styleable.RecyclerView_reverseLayout;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_spanCount = global::MyRecipes.Droid.Resource.Styleable.RecyclerView_spanCount;
+			global::MvvmCross.Droid.Support.V7.RecyclerView.Resource.Styleable.RecyclerView_stackFromEnd = global::MyRecipes.Droid.Resource.Styleable.RecyclerView_stackFromEnd;
 			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.ApplicationName = global::MyRecipes.Droid.Resource.String.ApplicationName;
 			global::MvvmCross.Plugins.Sqlite.Droid.Resource.String.Hello = global::MyRecipes.Droid.Resource.String.Hello;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::MyRecipes.Droid.Resource.String.ApplicationName;
@@ -56,26 +94,41 @@ namespace MyRecipes.Droid
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f010000
-			public const int MvxBind = 2130771968;
-			
-			// aapt resource value: 0x7f010004
-			public const int MvxDropDownItemTemplate = 2130771972;
-			
 			// aapt resource value: 0x7f010005
-			public const int MvxGroupItemTemplate = 2130771973;
+			public const int MvxBind = 2130771973;
 			
-			// aapt resource value: 0x7f010003
-			public const int MvxItemTemplate = 2130771971;
+			// aapt resource value: 0x7f010009
+			public const int MvxDropDownItemTemplate = 2130771977;
 			
-			// aapt resource value: 0x7f010001
-			public const int MvxLang = 2130771969;
+			// aapt resource value: 0x7f01000a
+			public const int MvxGroupItemTemplate = 2130771978;
+			
+			// aapt resource value: 0x7f010008
+			public const int MvxItemTemplate = 2130771976;
 			
 			// aapt resource value: 0x7f010006
-			public const int MvxSource = 2130771974;
+			public const int MvxLang = 2130771974;
+			
+			// aapt resource value: 0x7f01000b
+			public const int MvxSource = 2130771979;
+			
+			// aapt resource value: 0x7f010007
+			public const int MvxTemplate = 2130771975;
+			
+			// aapt resource value: 0x7f010004
+			public const int MvxTemplateSelector = 2130771972;
+			
+			// aapt resource value: 0x7f010000
+			public const int layoutManager = 2130771968;
 			
 			// aapt resource value: 0x7f010002
-			public const int MvxTemplate = 2130771970;
+			public const int reverseLayout = 2130771970;
+			
+			// aapt resource value: 0x7f010001
+			public const int spanCount = 2130771969;
+			
+			// aapt resource value: 0x7f010003
+			public const int stackFromEnd = 2130771971;
 			
 			static Attribute()
 			{
@@ -83,6 +136,28 @@ namespace MyRecipes.Droid
 			}
 			
 			private Attribute()
+			{
+			}
+		}
+		
+		public partial class Dimension
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int item_touch_helper_swipe_escape_max_velocity = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int item_touch_helper_swipe_escape_velocity = 2130968578;
+			
+			static Dimension()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Dimension()
 			{
 			}
 		}
@@ -106,74 +181,92 @@ namespace MyRecipes.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050008
-			public const int AddNewCategoryButton = 2131034120;
-			
-			// aapt resource value: 0x7f05000b
-			public const int AddNewDishButton = 2131034123;
-			
-			// aapt resource value: 0x7f05000a
-			public const int AddNewProductButton = 2131034122;
-			
-			// aapt resource value: 0x7f050007
-			public const int BottonBar = 2131034119;
-			
-			// aapt resource value: 0x7f050011
-			public const int CMTextView = 2131034129;
-			
-			// aapt resource value: 0x7f050012
-			public const int CategoiesLayout = 2131034130;
-			
-			// aapt resource value: 0x7f05000e
-			public const int FMTextView = 2131034126;
+			// aapt resource value: 0x7f050009
+			public const int AddNewCategoryButton = 2131034121;
 			
 			// aapt resource value: 0x7f05000f
-			public const int FavoritesLayout = 2131034127;
-			
-			// aapt resource value: 0x7f050000
-			public const int MvvmCrossTagId = 2131034112;
-			
-			// aapt resource value: 0x7f050001
-			public const int MvxBindingTagUnique = 2131034113;
-			
-			// aapt resource value: 0x7f050009
-			public const int ProductsLayout = 2131034121;
-			
-			// aapt resource value: 0x7f05000c
-			public const int ShowAllProductButton = 2131034124;
-			
-			// aapt resource value: 0x7f050010
-			public const int TitleCategoriesTextView = 2131034128;
+			public const int AddNewDishButton = 2131034127;
 			
 			// aapt resource value: 0x7f05000d
-			public const int TitleTextView = 2131034125;
+			public const int AddNewProductButton = 2131034125;
 			
-			// aapt resource value: 0x7f050016
-			public const int button1 = 2131034134;
+			// aapt resource value: 0x7f050008
+			public const int BottonBar = 2131034120;
 			
-			// aapt resource value: 0x7f050006
-			public const int checkBox1 = 2131034118;
+			// aapt resource value: 0x7f050017
+			public const int CMTextView = 2131034135;
 			
-			// aapt resource value: 0x7f050003
-			public const int editText1 = 2131034115;
-			
-			// aapt resource value: 0x7f050005
-			public const int editText2 = 2131034117;
-			
-			// aapt resource value: 0x7f050013
-			public const int listView1 = 2131034131;
+			// aapt resource value: 0x7f050018
+			public const int CategoiesLayout = 2131034136;
 			
 			// aapt resource value: 0x7f050015
-			public const int listView2 = 2131034133;
+			public const int CategoriesLayout = 2131034133;
 			
-			// aapt resource value: 0x7f050002
-			public const int textView1 = 2131034114;
+			// aapt resource value: 0x7f05000a
+			public const int EnterTitleEditText = 2131034122;
 			
-			// aapt resource value: 0x7f050004
-			public const int textView2 = 2131034116;
+			// aapt resource value: 0x7f05000b
+			public const int EnterWeightEditText = 2131034123;
+			
+			// aapt resource value: 0x7f050013
+			public const int FMTextView = 2131034131;
 			
 			// aapt resource value: 0x7f050014
-			public const int textView3 = 2131034132;
+			public const int Favorites = 2131034132;
+			
+			// aapt resource value: 0x7f050011
+			public const int FavoritesLayout = 2131034129;
+			
+			// aapt resource value: 0x7f05000e
+			public const int MessageTextView = 2131034126;
+			
+			// aapt resource value: 0x7f050001
+			public const int MvvmCrossTagId = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int MvxBindingTagUnique = 2131034114;
+			
+			// aapt resource value: 0x7f05000c
+			public const int ProductsLayout = 2131034124;
+			
+			// aapt resource value: 0x7f050010
+			public const int ShowAllProductButton = 2131034128;
+			
+			// aapt resource value: 0x7f050016
+			public const int TitleCategoriesTextView = 2131034134;
+			
+			// aapt resource value: 0x7f050012
+			public const int TitleTextView = 2131034130;
+			
+			// aapt resource value: 0x7f05001c
+			public const int button1 = 2131034140;
+			
+			// aapt resource value: 0x7f050007
+			public const int checkBox1 = 2131034119;
+			
+			// aapt resource value: 0x7f050004
+			public const int editText1 = 2131034116;
+			
+			// aapt resource value: 0x7f050006
+			public const int editText2 = 2131034118;
+			
+			// aapt resource value: 0x7f050000
+			public const int item_touch_helper_previous_elevation = 2131034112;
+			
+			// aapt resource value: 0x7f050019
+			public const int listView1 = 2131034137;
+			
+			// aapt resource value: 0x7f05001b
+			public const int listView2 = 2131034139;
+			
+			// aapt resource value: 0x7f050003
+			public const int textView1 = 2131034115;
+			
+			// aapt resource value: 0x7f050005
+			public const int textView2 = 2131034117;
+			
+			// aapt resource value: 0x7f05001a
+			public const int textView3 = 2131034138;
 			
 			static Id()
 			{
@@ -195,7 +288,7 @@ namespace MyRecipes.Droid
 			public const int Add_Dish_Layout = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Add_Product_Layout = 2130903042;
+			public const int Add_New_Product_Layout = 2130903042;
 			
 			// aapt resource value: 0x7f030003
 			public const int All_Product_Layout = 2130903043;
@@ -234,11 +327,11 @@ namespace MyRecipes.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f060001
+			public const int ApplicationName = 2131099649;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f060000
+			public const int Hello = 2131099648;
 			
 			static String()
 			{
@@ -254,8 +347,8 @@ namespace MyRecipes.Droid
 		{
 			
 			public static int[] MvxBinding = new int[] {
-					2130771968,
-					2130771969};
+					2130771973,
+					2130771974};
 			
 			// aapt resource value: 0
 			public const int MvxBinding_MvxBind = 0;
@@ -264,32 +357,60 @@ namespace MyRecipes.Droid
 			public const int MvxBinding_MvxLang = 1;
 			
 			public static int[] MvxControl = new int[] {
-					2130771970};
+					2130771975};
 			
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
 			public static int[] MvxExpandableListView = new int[] {
-					2130771973};
+					2130771978};
 			
 			// aapt resource value: 0
 			public const int MvxExpandableListView_MvxGroupItemTemplate = 0;
 			
 			public static int[] MvxImageView = new int[] {
-					2130771974};
+					2130771979};
 			
 			// aapt resource value: 0
 			public const int MvxImageView_MvxSource = 0;
 			
 			public static int[] MvxListView = new int[] {
-					2130771971,
-					2130771972};
+					2130771976,
+					2130771977};
 			
 			// aapt resource value: 1
 			public const int MvxListView_MvxDropDownItemTemplate = 1;
 			
 			// aapt resource value: 0
 			public const int MvxListView_MvxItemTemplate = 0;
+			
+			public static int[] MvxRecyclerView = new int[] {
+					2130771972};
+			
+			// aapt resource value: 0
+			public const int MvxRecyclerView_MvxTemplateSelector = 0;
+			
+			public static int[] RecyclerView = new int[] {
+					16842948,
+					2130771968,
+					2130771969,
+					2130771970,
+					2130771971};
+			
+			// aapt resource value: 0
+			public const int RecyclerView_android_orientation = 0;
+			
+			// aapt resource value: 1
+			public const int RecyclerView_layoutManager = 1;
+			
+			// aapt resource value: 3
+			public const int RecyclerView_reverseLayout = 3;
+			
+			// aapt resource value: 2
+			public const int RecyclerView_spanCount = 2;
+			
+			// aapt resource value: 4
+			public const int RecyclerView_stackFromEnd = 4;
 			
 			static Styleable()
 			{

@@ -3,22 +3,23 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/MessageTextView"
-        android:layout_width="match_parent"
+    <EditText
         android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:textSize="24dp"
-        local:MvxBind="Text DishesMessage" />
+        android:layout_width="match_parent"
+        android:id="@+id/EnterTitleEditText"
+        android:hint="Введите наименование продукта"
+        local:MvxBind="Text TitleNewProduct" />
     <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/MessageTextView">
-        <Mvx.MvxListView
-            android:layout_width="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/EnterTitleEditText">
+        <EditText
+            android:inputType="numberDecimal"
             android:layout_height="wrap_content"
-            local:MvxBind="ItemsSource Dishes"
-            local:MvxItemTemplate="@layout/dishsitem" />
+            android:layout_width="match_parent"
+            android:hint="Введите количество"
+            android:id="@+id/EnterWeightEditText"
+            local:MvxBind="Text WeightNewProduct"/>
     </LinearLayout>
     <LinearLayout
         android:id="@+id/BottonBar"
@@ -31,10 +32,10 @@
         android:orientation="horizontal"
         android:padding="5dip">
         <Button
-            android:id="@+id/AddNewDishButton"
+            android:id="@+id/AddNewCategoryButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Добавить блюдо"
-            local:MvxBind="Click AddDishCommand" />
+            android:text="Добавить продукт"
+            local:MvxBind="Click AddProductCommand" />
     </LinearLayout>
 </RelativeLayout>

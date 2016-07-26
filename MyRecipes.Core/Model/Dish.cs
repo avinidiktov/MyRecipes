@@ -16,14 +16,14 @@ namespace MyRecipes.Core.Model
         [ForeignKey(typeof(Category))]
         public int CategoryId { get; set; }
 
-        [ManyToOne]
+        [ManyToOne(null,null, CascadeOperations = CascadeOperation.All)]
         public Category Category { get; set; }
 
         public string CookingProcess { get; set; }
 
 		public bool IsFavorite { get; set; }
 
-        [ManyToMany(typeof(DishProduct))]
+        [ManyToMany(typeof(DishProduct),null,null, CascadeOperations = CascadeOperation.All)]
         public List<Product> Products { get; set; }
     }
 }
