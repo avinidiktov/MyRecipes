@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">MyRecipes.Droid</string>
+    <string name="app_name">MyRecipes.Droid</string>
+    <string name="OpenDrawerString">Open navigation drawer</string>
+    <string name="CloseDrawerString">Close navigation drawer</string>
 </resources>

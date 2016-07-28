@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
+using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.Model;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
@@ -8,14 +9,14 @@ using MyRecipes.Core.Services;
 
 namespace MyRecipes.Core.ViewModels
 {
-	public class CategoryViewModel : ParameterizedViewModel
+    public class CategoryViewModel : ParameterizedViewModel
     {
         private readonly IDbService _dBService;
 
         public CategoryViewModel(IDbService dBService)
-		{
+        {
             _dBService = dBService;
-            
+
             Categories = new List<Category>();
             Categories = _dBService.LoadItems<Category>().ToList();
 
@@ -43,28 +44,32 @@ namespace MyRecipes.Core.ViewModels
         }
 
 
-		public List<Category> _categories;
-		public List<Category> Categories {
-			get { return _categories; }
-			set { _categories = value; RaisePropertyChanged(()=>Categories);}
-		}
+        public List<Category> _categories;
+        public List<Category> Categories
+        {
+            get { return _categories; }
+            set { _categories = value; RaisePropertyChanged(() => Categories); }
+        }
 
 
-	    public List<Dish> _favorites;
-	    public List<Dish> Favorites
-	    {
-	        get { return _favorites; }
-	        set { _favorites = value; RaisePropertyChanged(()=>Favorites); }
-	    }
+        public List<Dish> _favorites;
+        public List<Dish> Favorites
+        {
+            get { return _favorites; }
+            set { _favorites = value; RaisePropertyChanged(() => Favorites); }
+        }
 
 
-	    private string _favoritesMessage;
-        public string FavoritesMessage {
-	        get { return _favoritesMessage; }
-	        set { _favoritesMessage = value;
-	            RaisePropertyChanged(() => FavoritesMessage);
-	        }
-	    }
+        private string _favoritesMessage;
+        public string FavoritesMessage
+        {
+            get { return _favoritesMessage; }
+            set
+            {
+                _favoritesMessage = value;
+                RaisePropertyChanged(() => FavoritesMessage);
+            }
+        }
 
 
         private string _categoriesMessage;
@@ -83,17 +88,17 @@ namespace MyRecipes.Core.ViewModels
         {
             get
             {
-                return new MvxRelayCommand(() => ShowViewModel<DishViewModel>(new Parameters() {Key = SelectedCategory.Id.ToString()}));
+                return new MvxRelayCommand(() => ShowViewModel<DishViewModel>(new Parameters() { Key = SelectedCategory.Id.ToString() }));
             }
         }
 
 
-	    
 
 
-	    private Category _selectedCategory;
-	    public Category SelectedCategory
-	    {
+
+        private Category _selectedCategory;
+        public Category SelectedCategory
+        {
             get { return _selectedCategory; }
             set
             {
@@ -106,8 +111,8 @@ namespace MyRecipes.Core.ViewModels
             }
         }
 
-	    public override void Init(Parameters parameters)
-	    {
+        public override void Init(Parameters parameters)
+        {
             Key = parameters.Key;
         }
 
@@ -131,6 +136,7 @@ namespace MyRecipes.Core.ViewModels
 
 
     }
+
 }
 
 

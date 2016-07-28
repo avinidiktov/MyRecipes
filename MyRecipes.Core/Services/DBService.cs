@@ -23,9 +23,9 @@ namespace MyRecipes.Core.Services
 
 
 
-            CreateCategory();
-            CreateProduct();
-            CreateDish();
+            //CreateCategory();
+            //CreateProduct();
+            //CreateDish();
 
             
 

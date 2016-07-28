@@ -3,33 +3,33 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout
-        android:id="@+id/ProductsLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Mvx.MvxListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            local:MvxBind="ItemsSource Products"
-            local:MvxItemTemplate="@layout/productitem" />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/BottonBar"
+  <LinearLayout
+      android:id="@+id/ProductsLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+    <Mvx.MvxListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#222222"
-        android:clickable="true"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="5dip">
-        <Button
-            android:id="@+id/AddNewProductButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Добавить продукт"
-            local:MvxBind="Click AddNewProductCommand" />
-    </LinearLayout>
+        android:minWidth="25px"
+        android:minHeight="25px"
+        local:MvxBind="ItemsSource Products"
+        local:MvxItemTemplate="@layout/productitem" />
+  </LinearLayout>
+  <LinearLayout
+      android:id="@+id/BottonBar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:background="#222222"
+      android:clickable="true"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:padding="5dip">
+    <Button
+        android:id="@+id/AddNewProductButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Добавить продукт"
+        local:MvxBind="Click AddNewProductCommand" />
+  </LinearLayout>
 </RelativeLayout>

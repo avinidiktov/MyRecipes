@@ -4,7 +4,7 @@ using MvvmCross.Droid.Views;
 
 namespace MyRecipes.Droid.Views
 {
-    [Activity(Label = "Добавление категории", MainLauncher = false)]
+    [Activity(Label = "Добавление категории")]
     public class AddCategoryView : MvxAppCompatActivity
     {
         protected override void OnViewModelSet()

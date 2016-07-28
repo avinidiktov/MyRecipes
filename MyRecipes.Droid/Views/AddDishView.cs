@@ -4,7 +4,7 @@ using MvvmCross.Droid.Views;
 
 namespace MyRecipes.Droid.Views
 {
-    [Activity(Label = "Добавление блюда", MainLauncher = false)]
+    [Activity(Label = "Добавление блюда")]
     public class AddDishView : MvxAppCompatActivity
     {
         protected override void OnViewModelSet()

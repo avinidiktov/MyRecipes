@@ -24,14 +24,16 @@ namespace MyRecipes.Core.ViewModels
         }
 
         private string _productMessage;
-        public string ProductMessage {
+        public string ProductMessage
+        {
             get { return _productMessage; }
             set { _productMessage = value; RaisePropertyChanged(() => Products); }
         }
 
 
         private List<Product> _products;
-        public List<Product> Products {
+        public List<Product> Products
+        {
             get { return _products; }
             set { _products = value; RaisePropertyChanged(() => Products); }
         }
@@ -46,7 +48,10 @@ namespace MyRecipes.Core.ViewModels
 
         public override void Init(Parameters parameters)
         {
-           
+
         }
     }
+
+
+
 }

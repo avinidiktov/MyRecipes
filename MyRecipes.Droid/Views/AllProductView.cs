@@ -4,8 +4,8 @@ using MvvmCross.Droid.Views;
 
 namespace MyRecipes.Droid.Views
 {
-    
-    [Activity(Label = "Имеющиеся продукты", MainLauncher = false)]
+
+    [Activity(Label = "Имеющиеся продукты")]
     public class AllProductView : MvxAppCompatActivity
     {
         protected override void OnViewModelSet()

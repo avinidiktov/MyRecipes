@@ -1030,32 +1030,32 @@ namespace MyRecipes.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f09003f
-			public const int abc_background_cache_hint_selector_material_dark = 2131296319;
+			// aapt resource value: 0x7f090042
+			public const int abc_background_cache_hint_selector_material_dark = 2131296322;
 			
-			// aapt resource value: 0x7f090040
-			public const int abc_background_cache_hint_selector_material_light = 2131296320;
+			// aapt resource value: 0x7f090043
+			public const int abc_background_cache_hint_selector_material_light = 2131296323;
 			
-			// aapt resource value: 0x7f090041
-			public const int abc_color_highlight_material = 2131296321;
+			// aapt resource value: 0x7f090044
+			public const int abc_color_highlight_material = 2131296324;
 			
 			// aapt resource value: 0x7f090004
 			public const int abc_input_method_navigation_guard = 2131296260;
 			
-			// aapt resource value: 0x7f090042
-			public const int abc_primary_text_disable_only_material_dark = 2131296322;
-			
-			// aapt resource value: 0x7f090043
-			public const int abc_primary_text_disable_only_material_light = 2131296323;
-			
-			// aapt resource value: 0x7f090044
-			public const int abc_primary_text_material_dark = 2131296324;
-			
 			// aapt resource value: 0x7f090045
-			public const int abc_primary_text_material_light = 2131296325;
+			public const int abc_primary_text_disable_only_material_dark = 2131296325;
 			
 			// aapt resource value: 0x7f090046
-			public const int abc_search_url_text = 2131296326;
+			public const int abc_primary_text_disable_only_material_light = 2131296326;
+			
+			// aapt resource value: 0x7f090047
+			public const int abc_primary_text_material_dark = 2131296327;
+			
+			// aapt resource value: 0x7f090048
+			public const int abc_primary_text_material_light = 2131296328;
+			
+			// aapt resource value: 0x7f090049
+			public const int abc_search_url_text = 2131296329;
 			
 			// aapt resource value: 0x7f090005
 			public const int abc_search_url_text_normal = 2131296261;
@@ -1066,11 +1066,14 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f090007
 			public const int abc_search_url_text_selected = 2131296263;
 			
-			// aapt resource value: 0x7f090047
-			public const int abc_secondary_text_material_dark = 2131296327;
+			// aapt resource value: 0x7f09004a
+			public const int abc_secondary_text_material_dark = 2131296330;
 			
-			// aapt resource value: 0x7f090048
-			public const int abc_secondary_text_material_light = 2131296328;
+			// aapt resource value: 0x7f09004b
+			public const int abc_secondary_text_material_light = 2131296331;
+			
+			// aapt resource value: 0x7f090041
+			public const int accent = 2131296321;
 			
 			// aapt resource value: 0x7f090008
 			public const int accent_material_dark = 2131296264;
@@ -1195,6 +1198,12 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f09003e
 			public const int preference_fallback_accent_color = 2131296318;
 			
+			// aapt resource value: 0x7f09003f
+			public const int primary = 2131296319;
+			
+			// aapt resource value: 0x7f090040
+			public const int primary_dark = 2131296320;
+			
 			// aapt resource value: 0x7f09002c
 			public const int primary_dark_material_dark = 2131296300;
 			
@@ -1243,11 +1252,11 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f09003b
 			public const int switch_thumb_disabled_material_light = 2131296315;
 			
-			// aapt resource value: 0x7f090049
-			public const int switch_thumb_material_dark = 2131296329;
+			// aapt resource value: 0x7f09004c
+			public const int switch_thumb_material_dark = 2131296332;
 			
-			// aapt resource value: 0x7f09004a
-			public const int switch_thumb_material_light = 2131296330;
+			// aapt resource value: 0x7f09004d
+			public const int switch_thumb_material_light = 2131296333;
 			
 			// aapt resource value: 0x7f09003c
 			public const int switch_thumb_normal_material_dark = 2131296316;
@@ -2137,6 +2146,9 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f060032
 			public const int title_template = 2131099698;
 			
+			// aapt resource value: 0x7f06007e
+			public const int toolbar = 2131099774;
+			
 			// aapt resource value: 0x7f060031
 			public const int topPanel = 2131099697;
 			
@@ -2376,6 +2388,9 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f03003c
 			public const int Test_Layout = 2130903100;
 			
+			// aapt resource value: 0x7f03003d
+			public const int Toolbar = 2130903101;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -2392,8 +2407,14 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f080017
 			public const int ApplicationName = 2131230743;
 			
+			// aapt resource value: 0x7f08001a
+			public const int CloseDrawerString = 2131230746;
+			
 			// aapt resource value: 0x7f080016
 			public const int Hello = 2131230742;
+			
+			// aapt resource value: 0x7f080019
+			public const int OpenDrawerString = 2131230745;
 			
 			// aapt resource value: 0x7f080002
 			public const int abc_action_bar_home_description = 2131230722;
@@ -2451,6 +2472,9 @@ namespace MyRecipes.Droid
 			
 			// aapt resource value: 0x7f080014
 			public const int abc_toolbar_collapse_description = 2131230740;
+			
+			// aapt resource value: 0x7f080018
+			public const int app_name = 2131230744;
 			
 			// aapt resource value: 0x7f080015
 			public const int status_bar_notification_info_overflow = 2131230741;
@@ -2923,6 +2947,12 @@ namespace MyRecipes.Droid
 			
 			// aapt resource value: 0x7f07000e
 			public const int CardView_Light = 2131165198;
+			
+			// aapt resource value: 0x7f07015e
+			public const int MyTheme = 2131165534;
+			
+			// aapt resource value: 0x7f07015f
+			public const int MyTheme_Base = 2131165535;
 			
 			// aapt resource value: 0x7f070026
 			public const int Platform_AppCompat = 2131165222;

@@ -17,5 +17,6 @@ namespace MyRecipes.Core
 
             Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<CategoryViewModel>());
         }
+
     }
 }
