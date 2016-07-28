@@ -1,11 +1,12 @@
 using Android.App;
+using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Views;
 
 namespace MyRecipes.Droid.Views
 {
 
     [Activity(Label = "Добавление продукта", MainLauncher = false)]
-    public class AddNewProductView : MvxActivity
+    public class AddNewProductView : MvxAppCompatActivity
     {
         protected override void OnViewModelSet()
         {

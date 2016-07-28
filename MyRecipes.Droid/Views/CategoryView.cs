@@ -1,10 +1,10 @@
 using Android.App;
-using MvvmCross.Droid.Views;
+using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace MyRecipes.Droid.Views
 {
-    [Activity(Label = "Мои рецепты", MainLauncher = true)]
-    public class CategoryView : MvxActivity
+    [Activity(Label = "Мои рецепты")]
+    public class CategoryView : MvxAppCompatActivity
     {
         protected override void OnViewModelSet()
         {

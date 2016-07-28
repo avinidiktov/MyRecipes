@@ -12,7 +12,7 @@ namespace MyRecipes.Core.Model
 
         public string Title { get; set; }
 
-        public float Weight { get; set; }
+        //public float Weight { get; set; }
 
         [ManyToMany(typeof(DishProduct),null,null, CascadeOperations = CascadeOperation.All)]
         public List<Dish> Dishes { get; set; }

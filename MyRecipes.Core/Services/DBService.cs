@@ -131,27 +131,27 @@ namespace MyRecipes.Core.Services
                 InsertItem(new Product()
                 {
                     Title = "Картофель",
-                    Weight = (float) 0.500
+                    //Weight = (float) 0.500
                 });
                 InsertItem(new Product()
                 {
                     Title = "Морковь",
-                    Weight = (float)0.300
+                    //Weight = (float)0.300
                 });
                 InsertItem(new Product()
                 {
                     Title = "Капуста",
-                    Weight = (float)2.500
+                    //Weight = (float)2.500
                 });
                 InsertItem(new Product()
                 {
                     Title = "Говядина",
-                    Weight = (float)1.500
+                   // Weight = (float)1.500
                 });
                 InsertItem(new Product()
                 {
                     Title = "Свинина",
-                    Weight = (float)1.500
+                    //Weight = (float)1.500
                 });
 
             }

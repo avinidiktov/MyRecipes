@@ -59,7 +59,7 @@ namespace MyRecipes.Core.ViewModels
             if (!string.IsNullOrEmpty(TitleNewProduct))
             {
                 NewProduct.Title = TitleNewProduct;
-                NewProduct.Weight = WeightNewProduct;
+                //NewProduct.Weight = WeightNewProduct;
 
                 _dbService.InsertItem(NewProduct);
                 ShowViewModel<AllProductViewModel>();
