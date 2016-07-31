@@ -1,7 +1,7 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
-using MyRecipes.Core.ViewModels;
+using MyRecipes.Core.ViewModels.Base;
 
 namespace MyRecipes.Core
 {
@@ -15,7 +15,7 @@ namespace MyRecipes.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<CategoryViewModel>());
+            Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<MainViewModel>());
         }
     }
 }
