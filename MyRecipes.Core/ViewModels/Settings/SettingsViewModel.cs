@@ -1,4 +1,4 @@
-﻿using MyRecipes.Core.ViewModels.Base;
+﻿using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 
 namespace MyRecipes.Core.ViewModels.Settings
 {

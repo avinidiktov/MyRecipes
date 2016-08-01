@@ -15,7 +15,7 @@ namespace MyRecipes.Core.Services
         {
             
             //CREATE DB
-            _connection = factory.GetConnection("data.dat");
+            _connection = factory.GetConnection("data.db3");
             _connection.CreateTable<Category>();
             _connection.CreateTable<Dish>();
             _connection.CreateTable<DishProduct>();
@@ -23,13 +23,11 @@ namespace MyRecipes.Core.Services
 
 
 
+
+
             CreateCategory();
-            CreateProduct();
-            CreateDish();
-
-            
-
-
+            //CreateProduct();
+            //CreateDish();
 
             //Clear db
             /*
@@ -44,11 +42,6 @@ namespace MyRecipes.Core.Services
             _connection.Execute("delete from Product");
             */
 
-        }
-
-        private void CreateDish()
-        {
-            
         }
 
         public void DbUpdate<T>(T obj) where T :class
@@ -123,38 +116,14 @@ namespace MyRecipes.Core.Services
                 });
             }
         }
+        private void CreateDish()
+        {
+
+        }
 
         public void CreateProduct()
         {
-            if (LoadItems<Product>().Count == 0)
-            {
-                InsertItem(new Product()
-                {
-                    Title = "Картофель",
-                    Weight = (float) 0.500
-                });
-                InsertItem(new Product()
-                {
-                    Title = "Морковь",
-                    Weight = (float)0.300
-                });
-                InsertItem(new Product()
-                {
-                    Title = "Капуста",
-                    Weight = (float)2.500
-                });
-                InsertItem(new Product()
-                {
-                    Title = "Говядина",
-                    Weight = (float)1.500
-                });
-                InsertItem(new Product()
-                {
-                    Title = "Свинина",
-                    Weight = (float)1.500
-                });
-
-            }
+            
         }
 
 

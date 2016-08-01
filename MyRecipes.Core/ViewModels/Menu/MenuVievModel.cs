@@ -1,29 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MvvmCross.Core.ViewModels;
-using MyRecipes.Core.ViewModels.Base;
+﻿using MvvmCross.Core.ViewModels;
+using MyRecipes.Core.MvvmCrossExtension.ViewModels;
+using MyRecipes.Core.ViewModels.Category;
 using MyRecipes.Core.ViewModels.Help;
-using MyRecipes.Core.ViewModels.Home;
 using MyRecipes.Core.ViewModels.Settings;
 
 namespace MyRecipes.Core.ViewModels.Menu
 {
     public class MenuViewModel : BaseViewModel
     {
-        #region Cross Platform Commands & Handlers
 
-        public IMvxCommand ShowHomeCommand
+        public IMvxCommand ShowCategoriesCommand
         {
-            get { return new MvxCommand(ShowHomeExecuted); }
+            get { return new MvxCommand(ShowCategoriesExecuted); }
         }
 
-        private void ShowHomeExecuted()
+        private void ShowCategoriesExecuted()
         {
-            ShowViewModel<HomeViewModel>();
+            ShowViewModel<CategoriesViewModel>();
         }
+
+
+
+        public IMvxCommand ShowFavoritesDishesCommand
+        {
+            get { return new MvxCommand(ShowFavoritesDishesExecuted); }
+        }
+
+        private void ShowFavoritesDishesExecuted()
+        {
+            //ShowViewModel<Fav>();
+        }
+
+
+        public IMvxCommand ShowProductsCommand
+        {
+            get { return new MvxCommand(ShowProductsExecuted); }
+        }
+
+        private void ShowProductsExecuted()
+        {
+            //ShowViewModel<Prod>();
+        }
+
+
+
 
         public IMvxCommand ShowSettingCommand
         {
@@ -32,7 +52,7 @@ namespace MyRecipes.Core.ViewModels.Menu
 
         private void ShowSettingsExecuted()
         {
-            ShowViewModel<SettingsViewModel>();
+           // ShowViewModel<SettingsViewModel>();
         }
 
         public IMvxCommand ShowHelpCommand
@@ -42,33 +62,11 @@ namespace MyRecipes.Core.ViewModels.Menu
 
         private void ShowHelpExecuted()
         {
-            ShowViewModel<HelpAndFeedbackViewModel>();
+            //ShowViewModel<HelpAndFeedbackViewModel>();
         }
 
-        #endregion
+        
 
-        #region Android Specific Demos
 
-        public IMvxCommand ShowRecyclerCommand
-        {
-            get { return new MvxCommand(ShowRecyclerExecuted); }
-        }
-
-        private void ShowRecyclerExecuted()
-        {
-            //ShowViewModel<ExampleRecyclerViewModel>();
-        }
-
-        public IMvxCommand ShowViewPagerCommand
-        {
-            get { return new MvxCommand(ShowViewPagerExecuted); }
-        }
-
-        private void ShowViewPagerExecuted()
-        {
-           // ShowViewModel<ExampleViewPagerViewModel>();
-        }
-
-        #endregion
     }
 }

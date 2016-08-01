@@ -1,20 +1,21 @@
-﻿using MyRecipes.Core.ViewModels.Home;
+﻿using MyRecipes.Core.MvvmCrossExtension.ViewModels;
+using MyRecipes.Core.ViewModels.Category;
 using MyRecipes.Core.ViewModels.Menu;
 
-namespace MyRecipes.Core.ViewModels.Base
+namespace MyRecipes.Core.ViewModels.Main
 {
     public class MainViewModel : BaseViewModel
     {
         public void ShowMenu()
         {
-            ShowViewModel<HomeViewModel>();
+            ShowViewModel<CategoriesViewModel>();
             ShowViewModel<MenuViewModel>();
         }
 
 
-        public void ShowHome()
+        public void ShowCategories()
         {
-            ShowViewModel<HomeViewModel>();
+            ShowViewModel<CategoriesViewModel>();
         }
 
         public void Init(object hint)

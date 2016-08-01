@@ -48,10 +48,12 @@
     <Compile Include="Services\DbService.cs" />
     <Compile Include="Services\IDbService.cs" />
     <Compile Include="Model\Category.cs" />
-    <Compile Include="ViewModels\Base\BaseViewModel.cs" />
-    <Compile Include="ViewModels\Base\MainViewModel.cs" />
+    <Compile Include="MvvmCrossExtension\ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Category\AddCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Category\DishesViewModel.cs" />
+    <Compile Include="ViewModels\Main\MainViewModel.cs" />
     <Compile Include="ViewModels\Help\HelpAndFeedbackViewModel.cs" />
-    <Compile Include="ViewModels\Home\HomeViewModel.cs" />
+    <Compile Include="ViewModels\Category\CategoriesViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuVievModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
   </ItemGroup>
@@ -99,9 +101,7 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\Android\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

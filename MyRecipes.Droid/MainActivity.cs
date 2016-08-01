@@ -7,12 +7,12 @@ using Android.Support.V4.Widget;
 using Android.Views.InputMethods;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MyRecipes.Core;
-using MyRecipes.Core.ViewModels.Base;
+using MyRecipes.Core.ViewModels.Main;
 
 namespace MyRecipes.Droid
 {
     [Activity(
-        Label = "Main Activity",
+        Label = "Мои рецепты",
         Theme = "@style/AppTheme",
         LaunchMode = LaunchMode.SingleTop,
         Name = "myrecipes.droid.MainActivity"

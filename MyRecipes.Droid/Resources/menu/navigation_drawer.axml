@@ -4,21 +4,21 @@ xmlns:local="http://schemas.android.com/apk/res-auto">
 
   <group android:id="@+id/nav_items">
     <item
-        android:id="@+id/nav_home"
-        android:title="Home" />
+        android:id="@+id/nav_categories"
+        android:title="Категории" />
   </group>
 
-  <item android:title="Examples">
-    <menu>
+  <group>
       <item
-          android:id="@+id/nav_viewpager"
-          android:title="ViewPager" />
+          android:id="@+id/nav_all_dishes"
+          android:title="Все блюда"/>
       <item
-        android:id="@+id/nav_recyclerview"
-        android:title="Recyclerview" />
-    </menu>
-  </item>
-
+        android:id="@+id/nav_favorites_dishes"
+        android:title="Избранные блюда"/>
+      <item
+        android:id="@+id/nav_products"
+        android:title="Продукты"/>
+  </group>
   <group android:id="@+id/nav_footer">
     <item
         android:id="@+id/nav_settings"

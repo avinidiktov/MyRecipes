@@ -2,8 +2,12 @@
 
 namespace MyRecipes.Core.MvvmCrossExtension.ViewModels
 {
-    public abstract class ParameterizedViewModel : MvxViewModel
+    public class ParameterizedViewModel : MvxViewModel
     {
+        public ParameterizedViewModel()
+        {
+            
+        }
         public string _key;
 
         public string Key {
@@ -13,7 +17,9 @@ namespace MyRecipes.Core.MvvmCrossExtension.ViewModels
             }
         }
 
-        public abstract void Init(Parameters parameters);
+        public void Init(Parameters parameters)
+        {
+        }
 
         public class Parameters
         {

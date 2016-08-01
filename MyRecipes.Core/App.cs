@@ -1,7 +1,7 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
-using MyRecipes.Core.ViewModels.Base;
+using MyRecipes.Core.ViewModels.Main;
 
 namespace MyRecipes.Core
 {

@@ -8,7 +8,7 @@ using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Shared.Attributes;
 using MvvmCross.Droid.Support.V4;
-using MyRecipes.Core.ViewModels.Base;
+using MyRecipes.Core.ViewModels.Main;
 using MyRecipes.Core.ViewModels.Menu;
 
 namespace MyRecipes.Droid.Fragments.Menu
@@ -28,7 +28,7 @@ namespace MyRecipes.Droid.Fragments.Menu
 
             _navigationView = view.FindViewById<NavigationView>(Resource.Id.navigation_view);
             _navigationView.SetNavigationItemSelectedListener(this);
-            _navigationView.Menu.FindItem(Resource.Id.nav_home).SetChecked(true);
+            _navigationView.Menu.FindItem(Resource.Id.nav_categories).SetChecked(true);
 
             return view;
         }
@@ -59,20 +59,23 @@ namespace MyRecipes.Droid.Fragments.Menu
 
             switch (itemId)
             {
-                case Resource.Id.nav_home:
-                    ViewModel.ShowHomeCommand.Execute();
+                case Resource.Id.nav_categories:
+                    ViewModel.ShowCategoriesCommand.Execute();
                     break;
-                case Resource.Id.nav_viewpager:
-                    ViewModel.ShowViewPagerCommand.Execute();
+                case Resource.Id.nav_all_dishes:
+                    //ViewModel.ShowDishesCommand.Execute();
                     break;
-                case Resource.Id.nav_recyclerview:
-                    ViewModel.ShowRecyclerCommand.Execute();
+                case Resource.Id.nav_favorites_dishes:
+                    ViewModel.ShowFavoritesDishesCommand.Execute();
+                    break;
+                case Resource.Id.nav_products:
+                    //ViewModel.ShowProductsCommand.Execute();
                     break;
                 case Resource.Id.nav_settings:
-                    ViewModel.ShowSettingCommand.Execute();
+                    //ViewModel.ShowSettingCommand.Execute();
                     break;
                 case Resource.Id.nav_helpfeedback:
-                    ViewModel.ShowHelpCommand.Execute();
+                    //ViewModel.ShowHelpCommand.Execute();
                     break;
             }
         }
