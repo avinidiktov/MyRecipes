@@ -2,6 +2,7 @@
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.ViewModels.Category;
 using MyRecipes.Core.ViewModels.Help;
+using MyRecipes.Core.ViewModels.Product;
 using MyRecipes.Core.ViewModels.Settings;
 
 namespace MyRecipes.Core.ViewModels.Menu
@@ -39,7 +40,7 @@ namespace MyRecipes.Core.ViewModels.Menu
 
         private void ShowProductsExecuted()
         {
-            //ShowViewModel<Prod>();
+            ShowViewModel<ProductsViewModel>();
         }
 
 

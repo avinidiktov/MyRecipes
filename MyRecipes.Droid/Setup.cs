@@ -11,7 +11,7 @@ using MyRecipes.Droid.Services;
 using MyRecipes.Droid.Utilities;
 
 
-namespace MyRecipes.Droid{
+namespace MyRecipes.Droid {
     public class Setup : MvxAndroidSetup
     {
         public Setup(Context applicationContext)
@@ -42,29 +42,29 @@ namespace MyRecipes.Droid{
             var mvxFragmentsPresenter = new MvxFragmentsPresenter(AndroidViewAssemblies);
             Mvx.RegisterSingleton<IMvxAndroidViewPresenter>(mvxFragmentsPresenter);
 
-            //add a presentation hint handler to listen for pop to root
-            mvxFragmentsPresenter.AddPresentationHintHandler<MvxPanelPopToRootPresentationHint>(hint =>
-            {
-                var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
-                var fragmentActivity = activity as Android.Support.V4.App.FragmentActivity;
+            ////add a presentation hint handler to listen for pop to root
+            //mvxFragmentsPresenter.AddPresentationHintHandler<MvxPanelPopToRootPresentationHint>(hint =>
+            //{
+            //    var activity = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
+            //    var fragmentActivity = activity as Android.Support.V4.App.FragmentActivity;
 
-                for (int i = 0; i < fragmentActivity.SupportFragmentManager.BackStackEntryCount; i++)
-                {
-                    fragmentActivity.SupportFragmentManager.PopBackStack();
-                }
-                return true;
-            });
-            //register the presentation hint to pop to root
-            //picked up in the third view model
-            Mvx.RegisterSingleton<MvxPresentationHint>(() => new MvxPanelPopToRootPresentationHint());
+            //    for (int i = 0; i < fragmentActivity.SupportFragmentManager.BackStackEntryCount; i++)
+            //    {
+            //        fragmentActivity.SupportFragmentManager.PopBackStack();
+            //    }
+            //    return true;
+            //});
+            ////register the presentation hint to pop to root
+            ////picked up in the third view model
+            //Mvx.RegisterSingleton<MvxPresentationHint>(() => new MvxPanelPopToRootPresentationHint());
             return mvxFragmentsPresenter;
         }
 
-        protected override void InitializeFirstChance()
-        {
-            base.InitializeFirstChance();
-            Mvx.RegisterSingleton<IDialogService>(() => new DialogService());
-        }
+        //protected override void InitializeFirstChance()
+        //{
+        //    base.InitializeFirstChance();
+        //    Mvx.RegisterSingleton<IDialogService>(() => new DialogService());
+        //}
 
     }
 }

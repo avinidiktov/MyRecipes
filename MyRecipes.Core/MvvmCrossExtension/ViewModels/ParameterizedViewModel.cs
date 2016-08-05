@@ -17,6 +17,19 @@ namespace MyRecipes.Core.MvvmCrossExtension.ViewModels
             }
         }
 
+        public string _typeVM;
+
+        public string TypeVM
+        {
+            get { return _typeVM; }
+            set
+            {
+                _typeVM = value;
+                RaisePropertyChanged(() => TypeVM);
+            }
+        }
+
+
         public void Init(Parameters parameters)
         {
         }
@@ -24,6 +37,7 @@ namespace MyRecipes.Core.MvvmCrossExtension.ViewModels
         public class Parameters
         {
             public string Key { get; set; }
+            public string TypeVM { get; set; }
         }
 
     }

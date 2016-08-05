@@ -43,6 +43,7 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Java.Interop" />
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
@@ -171,9 +172,14 @@
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Bootstrap\SqlitePluginBootstrap.cs" />
     <Compile Include="Fragments\Base\BaseFragment.cs" />
+    <Compile Include="Fragments\Category\AddCategoryFragment.cs" />
     <Compile Include="Fragments\Category\CategoriesFragment.cs" />
+    <Compile Include="Fragments\Dish\AddNewDishFragment.cs" />
     <Compile Include="Fragments\Dish\DishesFragment.cs" />
+    <Compile Include="Fragments\Dish\SelectingProductFragment.cs" />
     <Compile Include="Fragments\Menu\MenuFragment.cs" />
+    <Compile Include="Fragments\Product\AddNewProductFragment.cs" />
+    <Compile Include="Fragments\Product\ProductsFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,9 +202,6 @@
     <AndroidResource Include="Resources\layout\toolbar_actionbar.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_categories.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_navigation.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -209,6 +212,23 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_dishes.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\dish_item.axml" />
+    <AndroidResource Include="Resources\layout\fragment_add_new_category.axml" />
+    <AndroidResource Include="Resources\layout\fragment_add_new_product.axml" />
+    <AndroidResource Include="Resources\layout\products_item.axml" />
+    <AndroidResource Include="Resources\layout\products_item2.axml" />
+    <AndroidResource Include="Resources\layout\fragment_categories.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_add_new_dish.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_selecting_product.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_products.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -240,7 +260,7 @@
     <AndroidResource Include="Resources\values-v21\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\MvvmCrossLogo.png" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

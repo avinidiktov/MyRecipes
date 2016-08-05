@@ -6,14 +6,14 @@
     android:background="@color/colorPrimaryDark"
     android:padding="16dp">
     <ImageView
-        android:src="@drawable/mvvmcrosslogo"
+        android:src="@drawable/logo"
         android:layout_width="wrap_content"
         android:layout_height="80dp"
         android:id="@+id/image_view_row_icon"
         android:layout_centerVertical="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="@dimen/element_margin_medium"
-        android:scaleType="fitStart" />
+        android:scaleType="fitStart"
+        android:layout_marginTop="@dimen/element_margin_small" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:textSize="@dimen/text_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MvvmCross Android Example" />
+            android:text="MvvmCross Android Project" />
         <TextView
             android:id="@+id/text_view_username"
             android:singleLine="true"
@@ -36,6 +36,6 @@
             android:textSize="@dimen/text_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="More information available on GitHub" />
+            android:text="by Alexander Vinidiktov" />
     </LinearLayout>
 </RelativeLayout>

@@ -18,17 +18,20 @@
             local:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     </android.support.design.widget.AppBarLayout>
     <Button
-        android:text="Добавить блюдо"
+        android:text="Добавить продукт"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Click AddDishCommand" />
-    <LinearLayout
+        local:MvxBind="Click AddProductCommand" />
+    <MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
+        android:id="@+id/refresher"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        local:layout_behavior="@string/appbar_scrolling_view_behavior"
+        local:MvxBind="Refreshing IsRefreshing; RefreshCommand ReloadCommand">
         <Mvx.MvxListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            local:MvxBind="ItemsSource Dishes"
+            local:MvxBind="ItemsSource Products"
             local:MvxItemTemplate="@layout/dish_item" />
-    </LinearLayout>
+    </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>
 </LinearLayout>

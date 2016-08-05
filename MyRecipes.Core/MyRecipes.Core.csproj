@@ -45,16 +45,21 @@
     <Compile Include="MvvmCrossExtension\Command\MvxRelayCommand.cs" />
     <Compile Include="MvvmCrossExtension\ViewModels\ParameterizedViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\BurnViewModelsService.cs" />
     <Compile Include="Services\DbService.cs" />
     <Compile Include="Services\IDbService.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="MvvmCrossExtension\ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Category\AddCategoryViewModel.cs" />
-    <Compile Include="ViewModels\Category\DishesViewModel.cs" />
+    <Compile Include="ViewModels\Dish\AddNewDishViewModel.cs" />
+    <Compile Include="ViewModels\Dish\DishesViewModel.cs" />
+    <Compile Include="ViewModels\Dish\SelectingProductsViewModel.cs" />
     <Compile Include="ViewModels\Main\MainViewModel.cs" />
     <Compile Include="ViewModels\Help\HelpAndFeedbackViewModel.cs" />
     <Compile Include="ViewModels\Category\CategoriesViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuVievModel.cs" />
+    <Compile Include="ViewModels\Product\AddNewProductsViewModel.cs" />
+    <Compile Include="ViewModels\Product\ProductsVIewModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

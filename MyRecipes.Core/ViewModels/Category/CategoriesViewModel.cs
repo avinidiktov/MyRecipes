@@ -7,6 +7,8 @@ using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
+using MyRecipes.Core.ViewModels.Dish;
+using MyRecipes.Core.ViewModels.Product;
 
 
 namespace MyRecipes.Core.ViewModels.Category
@@ -52,14 +54,10 @@ namespace MyRecipes.Core.ViewModels.Category
         {
             get
             {
-                var sss = SelectedCategory;
                 //return new MvxRelayCommand(() => ShowViewModel<DishesViewModel>());
                 return new MvxRelayCommand(() => ShowViewModel<DishesViewModel>(new Parameters() { Key = SelectedCategory.Id.ToString() }));
             }
         }
-
-
-
 
 
         private bool _isRefreshing;
@@ -93,17 +91,19 @@ namespace MyRecipes.Core.ViewModels.Category
         {
             // By default return a completed Task
             await Task.Delay(5000);
+            Categories = _dbService.LoadItems<Model.Category>().ToList();
 
-            var rand = new Random();
-            Func<char> randChar = () => (char)rand.Next(65, 90);
-            Func<int, string> randStr = null;
-            randStr = x => (x > 0) ? randStr(--x) + randChar() : "";
-
-            var newItemCount = rand.Next(3);
-
-            //for (var i = 0; i < newItemCount; i++)
-            //    Items.Add(new ListItem { Title = "title " + randStr(4) });
         }
 
+
+
+
+        public ICommand AddCategoryCommand
+        {
+            get
+            {
+                return new MvxRelayCommand(() => ShowViewModel<AddCategoryViewModel>());
+            }
+        }
     }
 }

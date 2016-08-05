@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRecipes.Core", "MyRecipes.Core\MyRecipes.Core.csproj", "{1AD341CF-EFB3-4639-837F-58811BBBDF59}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRecipes.Droid", "MyRecipes.Droid\MyRecipes.Droid.csproj", "{F3EFA286-F221-48A1-A06A-AE5295AFB19F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRecipes.Core", "MyRecipes.Core\MyRecipes.Core.csproj", "{1AD341CF-EFB3-4639-837F-58811BBBDF59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,17 +13,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3EFA286-F221-48A1-A06A-AE5295AFB19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3EFA286-F221-48A1-A06A-AE5295AFB19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3EFA286-F221-48A1-A06A-AE5295AFB19F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{F3EFA286-F221-48A1-A06A-AE5295AFB19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3EFA286-F221-48A1-A06A-AE5295AFB19F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3EFA286-F221-48A1-A06A-AE5295AFB19F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AD341CF-EFB3-4639-837F-58811BBBDF59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

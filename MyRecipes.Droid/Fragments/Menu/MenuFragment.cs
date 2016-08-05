@@ -69,7 +69,7 @@ namespace MyRecipes.Droid.Fragments.Menu
                     ViewModel.ShowFavoritesDishesCommand.Execute();
                     break;
                 case Resource.Id.nav_products:
-                    //ViewModel.ShowProductsCommand.Execute();
+                    ViewModel.ShowProductsCommand.Execute();
                     break;
                 case Resource.Id.nav_settings:
                     //ViewModel.ShowSettingCommand.Execute();

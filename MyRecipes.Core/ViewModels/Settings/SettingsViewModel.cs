@@ -7,5 +7,8 @@ namespace MyRecipes.Core.ViewModels.Settings
         public SettingsViewModel()
         {
         }
+
+
+
     }
 }

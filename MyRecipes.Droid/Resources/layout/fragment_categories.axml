@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <include
-        layout="@layout/toolbar_actionbar" />
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            local:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+    <Button
+        android:text="Добавить категорию"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Click AddCategoryCommand" />
     <MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
         android:id="@+id/refresher"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         local:layout_behavior="@string/appbar_scrolling_view_behavior"
         local:MvxBind="Refreshing IsRefreshing; RefreshCommand ReloadCommand">
-      <Mvx.MvxListView
-          android:id="@+id/my_recycler_view"
-            android:scrollbars="vertical"
+        <Mvx.MvxListView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            local:MvxItemTemplate="@layout/category_item"
-            local:MvxBind="ItemsSource Categories; SelectedItem SelectedCategory; ItemClick CategoryClickedCommand" />
+            android:layout_height="wrap_content"
+            local:MvxBind="ItemsSource Categories;SelectedItem SelectedCategory; ItemClick CategoryClickedCommand"
+            local:MvxItemTemplate="@layout/dish_item" />
     </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

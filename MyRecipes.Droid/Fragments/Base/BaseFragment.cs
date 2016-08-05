@@ -1,8 +1,6 @@
-using Android.App;
 using Android.Content.Res;
 using Android.OS;
 using Android.Views;
-using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V4;
@@ -60,6 +58,7 @@ namespace MyRecipes.Droid.Fragments.Base
             return view;
         }
 
+
         protected abstract int FragmentId { get; }
 
         public override void OnConfigurationChanged(Configuration newConfig)
@@ -80,6 +79,10 @@ namespace MyRecipes.Droid.Fragments.Base
             }
         }
     }
+
+
+
+
 
     public abstract class BaseFragment<TViewModel> : BaseFragment where TViewModel : class, IMvxViewModel
     {
