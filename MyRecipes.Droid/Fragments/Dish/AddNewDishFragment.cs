@@ -21,6 +21,7 @@ namespace MyRecipes.Droid.Fragments.Dish
             _oldTitle = ((MainActivity)Activity).Title;
             ((MainActivity)Activity).Title = "Добавление нового блюда";
 
+            
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
 

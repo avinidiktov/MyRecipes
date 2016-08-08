@@ -2275,8 +2275,8 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f060020
 			public const int always = 2131099680;
 			
-			// aapt resource value: 0x7f060079
-			public const int appbar = 2131099769;
+			// aapt resource value: 0x7f06007a
+			public const int appbar = 2131099770;
 			
 			// aapt resource value: 0x7f06001d
 			public const int beginning = 2131099677;
@@ -2437,8 +2437,8 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f060043
 			public const int list_item = 2131099715;
 			
-			// aapt resource value: 0x7f060078
-			public const int main_content = 2131099768;
+			// aapt resource value: 0x7f060079
+			public const int main_content = 2131099769;
 			
 			// aapt resource value: 0x7f06006c
 			public const int main_frame = 2131099756;
@@ -2515,8 +2515,8 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f060056
 			public const int radio = 2131099734;
 			
-			// aapt resource value: 0x7f06007b
-			public const int refresher = 2131099771;
+			// aapt resource value: 0x7f060078
+			public const int refresher = 2131099768;
 			
 			// aapt resource value: 0x7f060032
 			public const int right = 2131099698;
@@ -2650,8 +2650,8 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f06004a
 			public const int title_template = 2131099722;
 			
-			// aapt resource value: 0x7f06007a
-			public const int toolbar = 2131099770;
+			// aapt resource value: 0x7f06007b
+			public const int toolbar = 2131099771;
 			
 			// aapt resource value: 0x7f060034
 			public const int top = 2131099700;

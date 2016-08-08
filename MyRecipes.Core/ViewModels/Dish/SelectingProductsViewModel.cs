@@ -40,7 +40,16 @@ namespace MyRecipes.Core.ViewModels.Dish
         {
             Key = parameters.Key;
         }
-        public ICommand SelectingProductCommand => new MvxRelayCommand(() => ShowViewModel<DishesViewModel>(new Parameters() { Key = this.Key, TypeVM = this.GetType().ToString()}));
+        public ICommand SelectingProductCommand => new MvxRelayCommand(SendProductToDish);
+
+        private void SendProductToDish()
+        {
+            Key = SelectedProduct.Id.ToString();
+            TypeVM = this.GetType().ToString();
+            ShowViewModel<AddNewDishViewModel>(new Parameters() { Key = this.Key, TypeVM = typeof(SelectingProductsViewModel).ToString()});
+        }
+
+//() => ShowViewModel<DishesViewModel>(new Parameters() { Key = this.Key, TypeVM = this.GetType().ToString()}));
 
 
         private bool _isRefreshing;

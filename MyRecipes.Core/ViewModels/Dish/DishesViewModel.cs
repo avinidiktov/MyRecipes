@@ -6,7 +6,6 @@ using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
-using MyRecipes.Core.ViewModels.Category;
 
 namespace MyRecipes.Core.ViewModels.Dish
 {
@@ -32,7 +31,7 @@ namespace MyRecipes.Core.ViewModels.Dish
         {
             get
             {
-                return new MvxRelayCommand(() => ShowViewModel<AddNewDishViewModel>(new Parameters() { Key = this.Key }));
+                return new MvxRelayCommand(() => ShowViewModel<AddNewDishViewModel>(new Parameters() { Key = this.Key, TypeVM = typeof(DishesViewModel).ToString()}));
             }
         }
 
@@ -47,8 +46,6 @@ namespace MyRecipes.Core.ViewModels.Dish
             var category = _dbService.LoadItemWithChildren<Model.Category>(int.Parse(Key), true);
             Dishes = category.Dishes ?? new List<Model.Dish>();
         }
-
-
 
 
         private bool _isRefreshing;

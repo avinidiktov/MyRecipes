@@ -6,7 +6,6 @@ using Android.Support.V4.View;
 using Android.Support.V4.Widget;
 using Android.Views.InputMethods;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MyRecipes.Core;
 using MyRecipes.Core.ViewModels.Main;
 
 namespace MyRecipes.Droid

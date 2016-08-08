@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <include
+        layout="@layout/toolbar_actionbar" />
+    <Button
+        android:text="Сохранить"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Click AddNewDishCommand" />
+    <EditText
+        android:hint="Введите название блюда"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text TitleNewDish" />
+    <EditText
+        android:hint="Введите описание процесса приготовления"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        local:MvxBind="Text CookingProcessNewDish"
+        android:isScrollContainer="true"
+        android:gravity="top"
+        android:minHeight="150dp" />
+    <CheckBox
+        android:text="Добавить в избранное?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        local:MvxBind="Checked  IsFavoriteNewDish" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Продукты"
+            android:gravity="center" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Добавить"
+            local:MvxBind="Click SelectedProductCommand" />
+    </LinearLayout>
+    <MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
+        android:id="@+id/refresher"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        local:layout_behavior="@string/appbar_scrolling_view_behavior"
+        local:MvxBind="Refreshing IsRefreshing; RefreshCommand ReloadCommand">
+        <Mvx.MvxListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            local:MvxBind="ItemsSource SelectedProducts"
+            local:MvxItemTemplate="@layout/products_item" />
+    </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>
 </LinearLayout>

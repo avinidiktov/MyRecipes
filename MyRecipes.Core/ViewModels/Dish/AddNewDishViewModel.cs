@@ -1,5 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
@@ -19,16 +22,28 @@ namespace MyRecipes.Core.ViewModels.Dish
             SelectedProducts = new List<Model.Product>();
         }
 
-        private string _categoryName = "";
-        public string CategoryName
+        private int _categoryId;
+        public int CategoryId
         {
-            get { return _categoryName; }
+            get { return _categoryId; }
             set
             {
-                _categoryName = value;
-                RaisePropertyChanged(() => CategoryName);
+                _categoryId = value;
+                RaisePropertyChanged(() => CategoryId);
             }
         }
+
+        private int _productId;
+        public int ProductId
+        {
+            get { return _productId; }
+            set
+            {
+                _productId = value;
+                RaisePropertyChanged(() => ProductId);
+            }
+        }
+
 
         private string _titleNewDish = "";
         public string TitleNewDish
@@ -51,12 +66,17 @@ namespace MyRecipes.Core.ViewModels.Dish
             set { _isFavoriteNewDish = value; RaisePropertyChanged(()=>IsFavoriteNewDish); }
         }
 
+
+
         private List<Model.Product> _products;
         public List<Model.Product> Products
         {
             get { return _products; }
-            set { _products = value; RaisePropertyChanged(() => Products); }
+            set { _products = _dbService.LoadItems<Model.Product>().ToList(); RaisePropertyChanged(() => Products); }
         }
+
+
+
 
         private List<Model.Product> _selectedProducts;
         public List<Model.Product> SelectedProducts
@@ -82,7 +102,7 @@ namespace MyRecipes.Core.ViewModels.Dish
 
                 _dbService.InsertItem(newDish);
 
-                var category = _dbService.LoadItemWithChildren<Model.Category>(int.Parse(Key), true);
+                var category = _dbService.LoadItemWithChildren<Model.Category>(CategoryId, true);
                 if (category.Dishes == null)
                 {
                     category.Dishes = new List<Model.Dish>();
@@ -95,10 +115,11 @@ namespace MyRecipes.Core.ViewModels.Dish
                 ///////-----------------------------------------
                 TODO--------------------------------------------------------------------------------------------- */
 
-                Products.Clear();
+                SelectedProducts.Clear();
                 IsFavoriteNewDish = false;
                 TitleNewDish = ""; CookingProcessNewDish = "";
-
+                CategoryId = -1;
+                ProductId = -1;
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -106,7 +127,10 @@ namespace MyRecipes.Core.ViewModels.Dish
             }  
         }
 
-        
+
+
+
+
 
         public ICommand SelectedProductCommand
         {
@@ -120,23 +144,63 @@ namespace MyRecipes.Core.ViewModels.Dish
 
         public new void Init(Parameters parameters)
         {
-
+            Key = parameters.Key;
             //TODO
             ////////////////////////////////////////////////////////////////////////////////////////
-            if (parameters.TypeVM == "DishesViewModel")
+            if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.DishesViewModel")
             {
-                CategoryName = _dbService.LoadItem<Model.Category>(int.Parse(Key)).Title;
+                CategoryId = _dbService.LoadItem<Model.Category>(int.Parse(Key)).Id;
             }
-            if (parameters.TypeVM == "SelectingProductsViewModel")
+            if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.SelectingProductsViewModel")
             {
-                var product = new Model.Product();
-                Products.Add(_dbService.LoadItem<Model.Product>(int.Parse(Key))); 
+                ProductId = _dbService.LoadItem<Model.Product>(int.Parse(Key)).Id;
             }
-            Key = parameters.Key;
+            
             ///////////////////////////////////////////////////////////////////////////////////////
         }
 
-        
+
+
+
+        private bool _isRefreshing;
+
+        public virtual bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                RaisePropertyChanged(() => IsRefreshing);
+            }
+        }
+
+        public ICommand ReloadCommand
+        {
+            get
+            {
+                return new MvxCommand(async () =>
+                {
+                    IsRefreshing = true;
+
+                    await ReloadData();
+
+                    IsRefreshing = false;
+                });
+            }
+        }
+
+        public virtual async Task ReloadData()
+        {
+            // By default return a completed Task
+            await Task.Delay(5000);
+            var aaa = _dbService.LoadItem<Model.Product>(ProductId);
+            SelectedProducts.Add(_dbService.LoadItem<Model.Product>(ProductId));
+        }
+
+
+
+
+
 
     }
 }
