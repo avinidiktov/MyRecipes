@@ -6,9 +6,9 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 using MvvmCross.Droid.Shared.Presenter;
-using MvvmCross.Platform.Droid.Platform;
+using MvvmCross.Platform.Plugins;
+using MvvmCross.Plugins.DownloadCache;
 using MyRecipes.Droid.Services;
-using MyRecipes.Droid.Utilities;
 
 
 namespace MyRecipes.Droid {
@@ -60,11 +60,33 @@ namespace MyRecipes.Droid {
             return mvxFragmentsPresenter;
         }
 
-        //protected override void InitializeFirstChance()
-        //{
-        //    base.InitializeFirstChance();
-        //    Mvx.RegisterSingleton<IDialogService>(() => new DialogService());
-        //}
+
+        /* --- https://github.com/MvvmCross/MvvmCross-Plugins/issues/119 */
+        protected override void AddPluginsLoaders(MvxLoaderPluginRegistry registry)
+        {
+            registry.Register<MvvmCross.Plugins.DownloadCache.PluginLoader, MvvmCross.Plugins.DownloadCache.Droid.Plugin>();
+            registry.Register<MvvmCross.Plugins.File.PluginLoader, MvvmCross.Plugins.File.Droid.Plugin>();
+            base.AddPluginsLoaders(registry);
+        }
+
+        protected override void InitializeLastChance()
+        {
+
+            base.InitializeLastChance();
+            MvvmCross.Plugins.File.PluginLoader.Instance.EnsureLoaded();
+            MvvmCross.Plugins.Json.PluginLoader.Instance.EnsureLoaded();
+            PluginLoader.Instance.EnsureLoaded();
+        }
+        /*--------------------------------------------------------------*/
+
+
+
+        protected override void InitializeFirstChance()
+        {
+            base.InitializeFirstChance();
+            Mvx.RegisterSingleton<IDialogService>(() => new DialogService());
+        }
 
     }
 }
+ 

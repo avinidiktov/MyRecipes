@@ -48,9 +48,8 @@
             android:layout_weight="1"
             android:text="Добавить"
             local:MvxBind="Click SelectedProductCommand" />
-    </LinearLayout>
+    </LinearLayout>  -->
   
-  -->
     <MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
         android:id="@+id/refresher"
         android:layout_width="match_parent"
@@ -61,6 +60,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             local:MvxBind="ItemsSource Products;SelectedItem SelectedProduct;ItemClick SelectedProductCommand"
-            local:MvxItemTemplate="@layout/products_item" />
+            local:MvxItemTemplate="@layout/products_item2" />
     </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>
 </LinearLayout>

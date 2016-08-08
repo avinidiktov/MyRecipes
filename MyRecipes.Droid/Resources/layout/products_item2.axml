@@ -5,15 +5,19 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="20dp">
-    <Mvx.MvxImageView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_weight="0"
+        android:gravity="right"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        local:MvxBind="Text Title" />
+    <Mvx.MvxImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:orientation="horizontal"
+        android:layout_weight="5"
         android:padding="20dp"
         local:MvxBind="ImageUrl ImageUrl" />
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        local:MvxBind="Text Title" />
 </LinearLayout>

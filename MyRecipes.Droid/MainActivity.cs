@@ -31,6 +31,8 @@ namespace MyRecipes.Droid
 
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
 
+            
+
             if (bundle == null)
                 ViewModel.ShowMenu();
 

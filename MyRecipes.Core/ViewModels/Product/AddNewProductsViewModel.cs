@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.Command;
@@ -27,11 +28,12 @@ namespace MyRecipes.Core.ViewModels.Product
 
         private void AddNewProduct()
         {
+            Random _random = new Random();
             var newProduct = new Model.Product//TODO
             {
                 Title = TitleNewProduct,
                 Weight = 1,
-                //ImageUrl = 
+                ImageUrl = string.Format("http://baconmockup.com/{0}/{0}", _random.Next(20)+80)
             };
             
             _dbService.InsertItem(newProduct);
