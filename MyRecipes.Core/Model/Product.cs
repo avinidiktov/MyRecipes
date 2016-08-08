@@ -5,7 +5,7 @@ using SQLiteNetExtensions.Attributes;
 namespace MyRecipes.Core.Model
 {
     [Table("Product")]
-    public class Product :ITitleDomainObject
+    public class Product :ITitleDomainObject, IUrlDomainObject
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -17,5 +17,6 @@ namespace MyRecipes.Core.Model
         [ManyToMany(typeof(DishProduct),null,null, CascadeOperations = CascadeOperation.All)]
         public List<Dish> Dishes { get; set; }
 
+        public string ImageUrl { get; set; }
     }
 }

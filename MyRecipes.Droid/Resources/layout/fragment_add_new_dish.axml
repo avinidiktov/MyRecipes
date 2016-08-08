@@ -29,7 +29,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         local:MvxBind="Checked  IsFavoriteNewDish" />
-    <LinearLayout
+    
+  <!--
+  <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +49,8 @@
             android:text="Добавить"
             local:MvxBind="Click SelectedProductCommand" />
     </LinearLayout>
+  
+  -->
     <MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
         android:id="@+id/refresher"
         android:layout_width="match_parent"
@@ -56,7 +60,7 @@
         <Mvx.MvxListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            local:MvxBind="ItemsSource SelectedProducts"
+            local:MvxBind="ItemsSource Products;SelectedItem SelectedProduct;ItemClick SelectedProductCommand"
             local:MvxItemTemplate="@layout/products_item" />
     </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>
 </LinearLayout>

@@ -30,7 +30,8 @@ namespace MyRecipes.Core.ViewModels.Product
             var newProduct = new Model.Product//TODO
             {
                 Title = TitleNewProduct,
-                Weight = 1
+                Weight = 1,
+                //ImageUrl = 
             };
             
             _dbService.InsertItem(newProduct);

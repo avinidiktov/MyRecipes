@@ -18,7 +18,7 @@ namespace MyRecipes.Core.ViewModels.Dish
         public AddNewDishViewModel(IDbService dbService)
         {
             _dbService = dbService;
-            Products = new List<Model.Product>();
+            Products = dbService.LoadItems<Model.Product>().ToList();
             SelectedProducts = new List<Model.Product>();
         }
 
@@ -110,6 +110,7 @@ namespace MyRecipes.Core.ViewModels.Dish
                 category.Dishes.Add(newDish);
                 _dbService.DbUpdateWithChildren(category);
 
+                ShowViewModel<DishesViewModel>(new Parameters() { Key = CategoryId.ToString() });
 
                 /*for test//--------------------------------------------------------------------------------------
                 ///////-----------------------------------------
@@ -123,12 +124,17 @@ namespace MyRecipes.Core.ViewModels.Dish
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-                ShowViewModel<CategoriesViewModel>();
+               
             }  
         }
 
 
-
+        private Model.Product _selectedProduct;
+        public Model.Product SelectedProduct
+        {
+            get { return _selectedProduct;; }
+            set { _selectedProduct = value; RaisePropertyChanged(() => SelectedProduct);}
+        }
 
 
 
@@ -136,27 +142,34 @@ namespace MyRecipes.Core.ViewModels.Dish
         {
             get
             {
-                return new MvxRelayCommand(() => ShowViewModel<SelectingProductsViewModel>());
+                //return new MvxRelayCommand(() => ShowViewModel<SelectingProductsViewModel>());
+                return new MvxRelayCommand(SelectingProducts);
             }
         }
 
+        private void SelectingProducts()
+        {
+            SelectedProducts.Add(SelectedProduct);
+        }
 
 
         public new void Init(Parameters parameters)
         {
             Key = parameters.Key;
-            //TODO
-            ////////////////////////////////////////////////////////////////////////////////////////
-            if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.DishesViewModel")
-            {
-                CategoryId = _dbService.LoadItem<Model.Category>(int.Parse(Key)).Id;
-            }
-            if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.SelectingProductsViewModel")
-            {
-                ProductId = _dbService.LoadItem<Model.Product>(int.Parse(Key)).Id;
-            }
-            
-            ///////////////////////////////////////////////////////////////////////////////////////
+            CategoryId = _dbService.LoadItem<Model.Category>(int.Parse(Key)).Id;
+
+            ////TODO
+            //////////////////////////////////////////////////////////////////////////////////////////
+            //if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.DishesViewModel")
+            //{
+            //    CategoryId = _dbService.LoadItem<Model.Category>(int.Parse(Key)).Id;
+            //}
+            //if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.SelectingProductsViewModel")
+            //{
+            //    ProductId = _dbService.LoadItem<Model.Product>(int.Parse(Key)).Id;
+            //}
+
+            /////////////////////////////////////////////////////////////////////////////////////////
         }
 
 
@@ -193,8 +206,7 @@ namespace MyRecipes.Core.ViewModels.Dish
         {
             // By default return a completed Task
             await Task.Delay(5000);
-            var aaa = _dbService.LoadItem<Model.Product>(ProductId);
-            SelectedProducts.Add(_dbService.LoadItem<Model.Product>(ProductId));
+            Products = _dbService.LoadItems<Model.Product>().ToList();
         }
 
 
