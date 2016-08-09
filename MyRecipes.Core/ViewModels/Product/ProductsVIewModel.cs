@@ -6,6 +6,7 @@ using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
+using MyRecipes.Core.ViewModels.Dish;
 
 namespace MyRecipes.Core.ViewModels.Product
 {
@@ -33,6 +34,27 @@ namespace MyRecipes.Core.ViewModels.Product
         {
             ShowViewModel<AddNewProductsViewModel>(new Parameters() {Key = this.Key});
         }
+
+
+        private Model.Product _selectedProduct;
+        public Model.Product SelectedProduct
+        {
+            get { return _selectedProduct; ; }
+            set { _selectedProduct = value; RaisePropertyChanged(() => SelectedProduct); }
+        }
+
+        public ICommand EditProductCommand => new MvxRelayCommand(SelectingProduct);
+
+        private void SelectingProduct()
+        {
+            var id = SelectedProduct.Id.ToString();
+            ShowViewModel<EditProductViewModel>(new Parameters() { Key = id });
+        }
+
+
+
+
+
 
 
 

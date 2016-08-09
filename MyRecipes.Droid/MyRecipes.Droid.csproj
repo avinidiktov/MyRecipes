@@ -202,6 +202,7 @@
     <Compile Include="Fragments\Dish\SelectingProductFragment.cs" />
     <Compile Include="Fragments\Menu\MenuFragment.cs" />
     <Compile Include="Fragments\Product\AddNewProductFragment.cs" />
+    <Compile Include="Fragments\Product\EditProductFragment.cs" />
     <Compile Include="Fragments\Product\ProductsFragment.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -263,6 +264,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_edit_dish.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_edit_product.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

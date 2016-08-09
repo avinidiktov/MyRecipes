@@ -64,6 +64,7 @@
     <Compile Include="ViewModels\Category\CategoriesViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuVievModel.cs" />
     <Compile Include="ViewModels\Product\AddNewProductsViewModel.cs" />
+    <Compile Include="ViewModels\Product\EditProductViewModel.cs" />
     <Compile Include="ViewModels\Product\ProductsVIewModel.cs" />
     <Compile Include="ViewModels\Settings\SettingsViewModel.cs" />
   </ItemGroup>

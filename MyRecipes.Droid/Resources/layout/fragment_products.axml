@@ -31,7 +31,7 @@
         <Mvx.MvxListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            local:MvxBind="ItemsSource Products"
+            local:MvxBind="ItemsSource Products;SelectedItem SelectedProduct;ItemClick EditProductCommand"
             local:MvxItemTemplate="@layout/dish_item" />
     </MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout>
 </LinearLayout>
