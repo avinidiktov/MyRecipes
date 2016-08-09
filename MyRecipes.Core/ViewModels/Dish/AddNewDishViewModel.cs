@@ -6,7 +6,6 @@ using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
-using MyRecipes.Core.ViewModels.Category;
 
 namespace MyRecipes.Core.ViewModels.Dish
 {
@@ -43,7 +42,6 @@ namespace MyRecipes.Core.ViewModels.Dish
                 RaisePropertyChanged(() => ProductId);
             }
         }
-
 
         private string _titleNewDish = "";
         public string TitleNewDish
@@ -101,6 +99,9 @@ namespace MyRecipes.Core.ViewModels.Dish
                 };
 
                 _dbService.InsertItem(newDish);
+                _dbService.DbUpdateWithChildren(newDish);
+
+                //var aa = _dbService.LoadItemWithChildren<Model.Dish>(newDish.Id, true);
 
                 var category = _dbService.LoadItemWithChildren<Model.Category>(CategoryId, true);
                 if (category.Dishes == null)
@@ -108,6 +109,7 @@ namespace MyRecipes.Core.ViewModels.Dish
                     category.Dishes = new List<Model.Dish>();
                 }
                 category.Dishes.Add(newDish);
+                
                 _dbService.DbUpdateWithChildren(category);
 
                 ShowViewModel<DishesViewModel>(new Parameters() { Key = CategoryId.ToString() });
@@ -138,18 +140,25 @@ namespace MyRecipes.Core.ViewModels.Dish
 
 
 
-        public ICommand SelectedProductCommand
-        {
-            get
-            {
-                //return new MvxRelayCommand(() => ShowViewModel<SelectingProductsViewModel>());
-                return new MvxRelayCommand(SelectingProducts);
-            }
-        }
+        public ICommand SelectedProductCommand => new MvxRelayCommand(SelectingProducts);
 
         private void SelectingProducts()
         {
-            SelectedProducts.Add(SelectedProduct);
+            if (SelectedProducts.Count == 0)
+            {
+                SelectedProducts.Add(SelectedProduct);
+                return;
+            }
+
+            if (!SelectedProducts.Contains(SelectedProduct))
+            {
+                SelectedProducts.Add(SelectedProduct);
+            }
+            else
+            {
+                SelectedProducts.RemoveAll(s => s == SelectedProduct);
+            }
+            
         }
 
 
@@ -158,18 +167,6 @@ namespace MyRecipes.Core.ViewModels.Dish
             Key = parameters.Key;
             CategoryId = _dbService.LoadItem<Model.Category>(int.Parse(Key)).Id;
 
-            ////TODO
-            //////////////////////////////////////////////////////////////////////////////////////////
-            //if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.DishesViewModel")
-            //{
-            //    CategoryId = _dbService.LoadItem<Model.Category>(int.Parse(Key)).Id;
-            //}
-            //if (parameters.TypeVM == "MyRecipes.Core.ViewModels.Dish.SelectingProductsViewModel")
-            //{
-            //    ProductId = _dbService.LoadItem<Model.Product>(int.Parse(Key)).Id;
-            //}
-
-            /////////////////////////////////////////////////////////////////////////////////////////
         }
 
 

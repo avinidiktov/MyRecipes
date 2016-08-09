@@ -12,6 +12,9 @@ namespace MyRecipes.Core.Services
 
         void DbUpdate<T>(T obj) where T : class;
 
+        void DeleteItem<T>(T obj, bool recursive) where T : class;
+
+
         T LoadItemWithChildren<T>(int id, bool recursive) where T : class;
         void DbUpdateWithChildren<T>(T obj) where T : class;
     }

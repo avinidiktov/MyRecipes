@@ -1,6 +1,7 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.ViewModels.Category;
+using MyRecipes.Core.ViewModels.Dish;
 using MyRecipes.Core.ViewModels.Help;
 using MyRecipes.Core.ViewModels.Product;
 using MyRecipes.Core.ViewModels.Settings;
@@ -21,6 +22,15 @@ namespace MyRecipes.Core.ViewModels.Menu
         }
 
 
+        public IMvxCommand ShowDishesCommand {
+            get { return new MvxCommand(ShowAllDishesExecuted);}
+        }
+
+        private void ShowAllDishesExecuted()
+        {
+            ShowViewModel<AllDishesViewModel>();
+        }
+
 
         public IMvxCommand ShowFavoritesDishesCommand
         {
@@ -29,7 +39,7 @@ namespace MyRecipes.Core.ViewModels.Menu
 
         private void ShowFavoritesDishesExecuted()
         {
-            //ShowViewModel<Fav>();
+            ShowViewModel<FavoritesDishesViewModel>();
         }
 
 
@@ -60,6 +70,8 @@ namespace MyRecipes.Core.ViewModels.Menu
         {
             get { return new MvxCommand(ShowHelpExecuted); }
         }
+
+        
 
         private void ShowHelpExecuted()
         {

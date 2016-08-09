@@ -6,21 +6,34 @@
     android:layout_height="match_parent">
     <include
         layout="@layout/toolbar_actionbar" />
-    <Button
-        android:text="Сохранить"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Click AddNewDishCommand" />
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <Button
+            android:text="Сохранить"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            local:MvxBind="Click EditDishCommand" />
+        <Button
+            android:text="Удалить"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            local:MvxBind="Click DeleteDishCommand" />
+    </LinearLayout>
     <EditText
         android:hint="Введите название блюда"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Text TitleNewDish" />
+        local:MvxBind="Text TitleEditDish" />
     <EditText
         android:hint="Введите описание процесса приготовления"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Text CookingProcessNewDish"
+        local:MvxBind="Text CookingProcessEditDish"
         android:isScrollContainer="true"
         android:gravity="top"
         android:minHeight="150dp" />
@@ -28,26 +41,7 @@
         android:text="Добавить в избранное?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        local:MvxBind="Checked  IsFavoriteNewDish" />
-<!--
-  <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Продукты"
-            android:gravity="center" />
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Добавить"
-            local:MvxBind="Click SelectedProductCommand" />
-    </LinearLayout>  -->
+        local:MvxBind="Checked  IsFavoriteEditDish" />
     <MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout
         android:id="@+id/refresher"
         android:layout_width="match_parent"

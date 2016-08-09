@@ -21,7 +21,7 @@ namespace MyRecipes.Core.Services
             _connection.CreateTable<DishProduct>();
             _connection.CreateTable<Product>();
 
-
+            
 
 
 
@@ -47,6 +47,11 @@ namespace MyRecipes.Core.Services
         public void DbUpdate<T>(T obj) where T :class
         {
             _connection.Update(obj);
+        }
+
+        public void DeleteItem<T>(T obj, bool recursive) where T : class
+        {
+            _connection.Delete(obj, recursive);
         }
 
         public void DbUpdateWithChildren<T>(T obj) where T : class

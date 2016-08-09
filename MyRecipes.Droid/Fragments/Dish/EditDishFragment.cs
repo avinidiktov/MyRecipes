@@ -2,25 +2,24 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using MvvmCross.Droid.Shared.Attributes;
+using MyRecipes.Core.ViewModels.Dish;
 using MyRecipes.Core.ViewModels.Main;
-using MyRecipes.Core.ViewModels.Product;
 using MyRecipes.Droid.Fragments.Base;
 
-namespace MyRecipes.Droid.Fragments.Product
+namespace MyRecipes.Droid.Fragments.Dish
 {
     [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame)]
-    [Register("myrecipes.droid.fragments.product.ProductsFragment")]
-    public class ProductsFragment : BaseFragment<ProductsViewModel>
+    [Register("myrecipes.droid.fragments.dish.EditDishFragment")]
+    class EditDishFragment : BaseFragment<EditDishViewModel>
     {
         private string _oldTitle;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-
             ShowHamburgerMenu = true;
             _oldTitle = ((MainActivity)Activity).Title;
-            ((MainActivity)Activity).Title = "Продукты в наличии";
-            
+            ((MainActivity)Activity).Title = "Редактирование блюда";
+
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
 
@@ -30,14 +29,11 @@ namespace MyRecipes.Droid.Fragments.Product
             base.OnDestroyView();
         }
 
-
         public override void OnStop()
         {
             base.OnStop();
         }
 
-        protected override int FragmentId => Resource.Layout.fragment_products;
-
-
+        protected override int FragmentId => Resource.Layout.fragment_edit_dish;
     }
 }

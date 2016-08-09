@@ -195,7 +195,10 @@
     <Compile Include="Fragments\Category\AddCategoryFragment.cs" />
     <Compile Include="Fragments\Category\CategoriesFragment.cs" />
     <Compile Include="Fragments\Dish\AddNewDishFragment.cs" />
+    <Compile Include="Fragments\Dish\AllDishesFragment.cs" />
     <Compile Include="Fragments\Dish\DishesFragment.cs" />
+    <Compile Include="Fragments\Dish\EditDishFragment.cs" />
+    <Compile Include="Fragments\Dish\FavoritesDishesFragment.cs" />
     <Compile Include="Fragments\Dish\SelectingProductFragment.cs" />
     <Compile Include="Fragments\Menu\MenuFragment.cs" />
     <Compile Include="Fragments\Product\AddNewProductFragment.cs" />
@@ -251,6 +254,15 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_products.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_favorites.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_all_dishes.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_edit_dish.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -54,7 +54,10 @@
     <Compile Include="MvvmCrossExtension\ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\Category\AddCategoryViewModel.cs" />
     <Compile Include="ViewModels\Dish\AddNewDishViewModel.cs" />
+    <Compile Include="ViewModels\Dish\AllDishesViewModel.cs" />
     <Compile Include="ViewModels\Dish\DishesViewModel.cs" />
+    <Compile Include="ViewModels\Dish\EditDishViewModel.cs" />
+    <Compile Include="ViewModels\Dish\FavoritesDishesViewModel.cs" />
     <Compile Include="ViewModels\Dish\SelectingProductsViewModel.cs" />
     <Compile Include="ViewModels\Main\MainViewModel.cs" />
     <Compile Include="ViewModels\Help\HelpAndFeedbackViewModel.cs" />

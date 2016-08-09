@@ -1,25 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
-using MyRecipes.Core.ViewModels.Category;
 
-namespace MyRecipes.Core.ViewModels.Dish
+namespace MyRecipes.Core.ViewModels.Product
 {
-    public class SelectingProductsViewModel : ParameterizedViewModel
+    class ProductsRecyclerViewModel : ParameterizedViewModel
     {
         private readonly IDbService _dbService;
-        public SelectingProductsViewModel(IDbService dbService)
+
+        public ProductsRecyclerViewModel(IDbService dbService)
         {
             _dbService = dbService;
-            Products = _dbService.LoadItems<Model.Product>().ToList();
-
+            Products = dbService.LoadItems<Model.Product>().ToList();
         }
-
 
         private List<Model.Product> _products;
         public List<Model.Product> Products
@@ -28,28 +28,14 @@ namespace MyRecipes.Core.ViewModels.Dish
             set { _products = value; RaisePropertyChanged(() => Products); }
         }
 
-        private Model.Product _selectedProduct;
 
-        public Model.Product SelectedProduct
+        public ICommand AddProductCommand => new MvxRelayCommand(AddProduct);
+
+        private void AddProduct()
         {
-            get { return _selectedProduct; }
-            set { _selectedProduct = value; RaisePropertyChanged(() => SelectedProduct); }
+            ShowViewModel<AddNewProductsViewModel>(new Parameters() { Key = this.Key });
         }
 
-        public new void Init(Parameters parameters)
-        {
-            Key = parameters.Key;
-        }
-        public ICommand SelectingProductCommand => new MvxRelayCommand(SendProductToDish);
-
-        private void SendProductToDish()
-        {
-            Key = SelectedProduct.Id.ToString();
-            TypeVM = this.GetType().ToString();
-            ShowViewModel<AddNewDishViewModel>(new Parameters() { Key = this.Key, TypeVM = typeof(SelectingProductsViewModel).ToString()});
-        }
-
-        //() => ShowViewModel<DishesViewModel>(new Parameters() { Key = this.Key, TypeVM = this.GetType().ToString()}));
 
 
         private bool _isRefreshing;
@@ -84,10 +70,7 @@ namespace MyRecipes.Core.ViewModels.Dish
             // By default return a completed Task
             await Task.Delay(5000);
             Products = _dbService.LoadItems<Model.Product>().ToList();
+
         }
-
-
-
-
     }
 }
