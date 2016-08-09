@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
 
@@ -32,8 +33,20 @@ namespace MyRecipes.Core.ViewModels.Dish
                 .Where(d => d.IsFavorite == true);
         }
 
+        private Model.Dish _selectedDish;
+        public Model.Dish SelectedDish
+        {
+            get { return _selectedDish; ; }
+            set { _selectedDish = value; RaisePropertyChanged(() => SelectedDish); }
+        }
 
+        public ICommand SelectedDishCommand => new MvxRelayCommand(SelectingDish);
 
+        private void SelectingDish()
+        {
+            var id = SelectedDish.Id.ToString();
+            ShowViewModel<EditDishViewModel>(new Parameters() { Key = id });
+        }
 
 
         private bool _isRefreshing;

@@ -71,11 +71,8 @@ namespace MyRecipes.Droid.Fragments.Menu
                 case Resource.Id.nav_products:
                     ViewModel.ShowProductsCommand.Execute();
                     break;
-                case Resource.Id.nav_settings:
-                    //ViewModel.ShowSettingCommand.Execute();
-                    break;
-                case Resource.Id.nav_helpfeedback:
-                    //ViewModel.ShowHelpCommand.Execute();
+                case Resource.Id.nav_about_me:
+                    ViewModel.ShowAboutMeCommand.Execute();
                     break;
             }
         }

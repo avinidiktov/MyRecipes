@@ -2455,6 +2455,9 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f060018
 			public const int multiply = 2131099672;
 			
+			// aapt resource value: 0x7f060098
+			public const int nav_about_me = 2131099800;
+			
 			// aapt resource value: 0x7f060094
 			public const int nav_all_dishes = 2131099796;
 			
@@ -2467,17 +2470,11 @@ namespace MyRecipes.Droid
 			// aapt resource value: 0x7f060097
 			public const int nav_footer = 2131099799;
 			
-			// aapt resource value: 0x7f060099
-			public const int nav_helpfeedback = 2131099801;
-			
 			// aapt resource value: 0x7f060092
 			public const int nav_items = 2131099794;
 			
 			// aapt resource value: 0x7f060096
 			public const int nav_products = 2131099798;
-			
-			// aapt resource value: 0x7f060098
-			public const int nav_settings = 2131099800;
 			
 			// aapt resource value: 0x7f06006e
 			public const int navigation_frame = 2131099758;

@@ -29,12 +29,13 @@ namespace MyRecipes.Core.ViewModels.Category
         public ICommand AddCategoryCommand => new MvxRelayCommand(AddNewCategory);
         private void AddNewCategory()
         {
-            var newCategory = new Model.Category {Title = TitleNewCategory};
-
-            _dbService.InsertItem(newCategory);
-
-            TitleNewCategory = "";
-            ShowViewModel<CategoriesViewModel>();
+            if (!string.IsNullOrEmpty(TitleNewCategory))
+            {
+                var newCategory = new Model.Category { Title = TitleNewCategory };
+                _dbService.InsertItem(newCategory);
+                TitleNewCategory = "";
+                ShowViewModel<CategoriesViewModel>();
+            }
         }
 
         public new void Init(Parameters parameters)

@@ -56,29 +56,15 @@ namespace MyRecipes.Core.ViewModels.Menu
 
 
 
-        public IMvxCommand ShowSettingCommand
+        public IMvxCommand ShowAboutMeCommand
         {
-            get { return new MvxCommand(ShowSettingsExecuted); }
+            get { return new MvxCommand(ShowAboutMeExecuted); }
         }
 
-        private void ShowSettingsExecuted()
+        private void ShowAboutMeExecuted()
         {
            // ShowViewModel<SettingsViewModel>();
         }
-
-        public IMvxCommand ShowHelpCommand
-        {
-            get { return new MvxCommand(ShowHelpExecuted); }
-        }
-
-        
-
-        private void ShowHelpExecuted()
-        {
-            //ShowViewModel<HelpAndFeedbackViewModel>();
-        }
-
-        
 
 
     }

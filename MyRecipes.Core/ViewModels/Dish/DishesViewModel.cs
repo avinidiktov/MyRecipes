@@ -47,6 +47,26 @@ namespace MyRecipes.Core.ViewModels.Dish
             Dishes = category.Dishes ?? new List<Model.Dish>();
         }
 
+        private Model.Dish _selectedDish;
+        public Model.Dish SelectedDish
+        {
+            get { return _selectedDish; ; }
+            set { _selectedDish = value; RaisePropertyChanged(() => SelectedDish); }
+        }
+
+        public ICommand SelectedDishCommand => new MvxRelayCommand(SelectingDish);
+
+        private void SelectingDish()
+        {
+            var id = SelectedDish.Id.ToString();
+            ShowViewModel<EditDishViewModel>(new Parameters() { Key = id });
+        }
+
+
+
+
+
+
 
         private bool _isRefreshing;
 

@@ -9,6 +9,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Введите название категории"
         local:MvxBind="Text TitleNewCategory" />
     <Button
         android:text="Добавить"
