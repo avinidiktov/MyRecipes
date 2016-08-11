@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Extensions\ProductExtension.cs" />
     <Compile Include="Model\Dish.cs" />
     <Compile Include="Model\DishProduct.cs" />
     <Compile Include="Model\IDomainObject.cs" />

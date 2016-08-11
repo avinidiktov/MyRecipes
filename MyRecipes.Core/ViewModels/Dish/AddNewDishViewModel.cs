@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using MyRecipes.Core.Extensions;
 using MyRecipes.Core.MvvmCrossExtension.Command;
 using MyRecipes.Core.MvvmCrossExtension.ViewModels;
 using MyRecipes.Core.Services;
@@ -17,8 +18,31 @@ namespace MyRecipes.Core.ViewModels.Dish
         public AddNewDishViewModel(IDbService dbService)
         {
             _dbService = dbService;
-            Products = dbService.LoadItems<Model.Product>().ToList();
+
+            var products = _dbService.LoadItems<Model.Product>().ToList();
+            Products = new List<ProductExtension>();
             SelectedProducts = new List<Model.Product>();
+            ConverterCollection(Products, products);
+        }
+
+
+        private void ConverterCollection(List<ProductExtension> productsExtension, List<Model.Product> products)
+        {
+            for (int i = 0; i < products.Count; i++)
+            {
+                var product = new ProductExtension()
+                {
+                    Id = products[i].Id,
+                    Title = products[i].Title,
+                    Dishes = products[i].Dishes,
+                    ImageUrl = products[i].ImageUrl,
+                    IsSelected = false,
+                    Weight = products[i].Weight
+
+                };
+                productsExtension.Add(product);
+            }
+
         }
 
         private int _categoryId;
@@ -65,12 +89,11 @@ namespace MyRecipes.Core.ViewModels.Dish
         }
 
 
-
-        private List<Model.Product> _products;
-        public List<Model.Product> Products
+        private List<ProductExtension> _products;
+        public List<ProductExtension> Products
         {
             get { return _products; }
-            set { _products = _dbService.LoadItems<Model.Product>().ToList(); RaisePropertyChanged(() => Products); }
+            set { _products = value;RaisePropertyChanged(() => Products); }
         }
 
 
@@ -102,7 +125,6 @@ namespace MyRecipes.Core.ViewModels.Dish
                 _dbService.DbUpdateWithChildren(newDish);
 
                 //var aa = _dbService.LoadItemWithChildren<Model.Dish>(newDish.Id, true);
-
                 var category = _dbService.LoadItemWithChildren<Model.Category>(CategoryId, true);
                 if (category.Dishes == null)
                 {
@@ -119,46 +141,60 @@ namespace MyRecipes.Core.ViewModels.Dish
                 TODO--------------------------------------------------------------------------------------------- */
 
                 SelectedProducts.Clear();
+                Products.Clear();
+
+                ConverterCollection(Products, _dbService.LoadItems<Model.Product>().ToList());
                 IsFavoriteNewDish = false;
                 TitleNewDish = ""; CookingProcessNewDish = "";
                 CategoryId = -1;
                 ProductId = -1;
                 //////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-               
             }  
         }
 
 
-        private Model.Product _selectedProduct;
-        public Model.Product SelectedProduct
+        private ProductExtension _selectedProduct;
+        public ProductExtension SelectedProduct
         {
-            get { return _selectedProduct;; }
+            get { return _selectedProduct; }
             set { _selectedProduct = value; RaisePropertyChanged(() => SelectedProduct);}
         }
 
+        private int findProduct()
+        {
+            for (int i = 0; i < Products.Count; i++)
+            {
+                if (SelectedProduct.Id == Products[i].Id)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
 
 
         public ICommand SelectedProductCommand => new MvxRelayCommand(SelectingProducts);
-
         private void SelectingProducts()
         {
+            var index = findProduct();
             if (SelectedProducts.Count == 0)
             {
                 SelectedProducts.Add(SelectedProduct);
+                Products[index].IsSelected = true;
                 return;
             }
 
             if (!SelectedProducts.Contains(SelectedProduct))
             {
                 SelectedProducts.Add(SelectedProduct);
+                Products[index].IsSelected = true;
             }
             else
             {
                 SelectedProducts.RemoveAll(s => s == SelectedProduct);
+                Products[index].IsSelected = false;
             }
-            
+
         }
 
 
@@ -170,9 +206,8 @@ namespace MyRecipes.Core.ViewModels.Dish
         }
 
 
-
-
         private bool _isRefreshing;
+
 
         public virtual bool IsRefreshing
         {
@@ -203,7 +238,9 @@ namespace MyRecipes.Core.ViewModels.Dish
         {
             // By default return a completed Task
             await Task.Delay(5000);
-            Products = _dbService.LoadItems<Model.Product>().ToList();
+            Products.Clear();
+            var products = _dbService.LoadItems<Model.Product>().ToList();
+            ConverterCollection(Products, products);
         }
 
 
